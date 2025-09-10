@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabinet</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .greeting {
+      position: absolute;
+      top: 87px;
+      left: 188px;
+      font-size: 30px;
+      color: white;
+    }
+
+    .profile-image {
+      position: absolute;
+      top: 87px;
+      left: 1206.3px;
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .profile-image:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .credit-button, .used-button, .available-button, .processing-button, .accepted-button {
+      position: absolute;
+      width: 339px;
+      height: 75px;
+      background-color: #085660;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      border-radius: 8px;
+      margin-top: -5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .credit-button {
+      left: 188px;
+      top: 153px;
+    }
+
+    .used-button {
+      left: 547px;
+      top: 153px;
+    }
+
+    .available-button {
+      left: 906px;
+      top: 153px;
+    }
+
+    .new-button, .deposit-image-button, .millpay-button, .message-button {
+      width: 75px;
+      height: 75px;
+      font-size: 14px;
+      flex-direction: column;
+      gap: 2px;
+      position: absolute;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background-color: #004654;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px; /* Додано закруглення кутів */
+    }
+
+    .new-button {
+      left: 188px;
+      top: 238px;
+    }
+
+    .deposit-image-button {
+      left: 273px;
+      top: 238px;
+    }
+
+    .millpay-button {
+      left: 358px;
+      top: 238px;
+    }
+
+    .message-button {
+      left: 443px;
+      top: 238px;
+    }
+
+    .new-button img, .deposit-image-button img, .millpay-button img, .message-button img {
+      width: 30px;
+      height: 30px;
+      margin-top: 5px;
+    }
+
+    .new-button span, .deposit-image-button span, .millpay-button span, .message-button span {
+      font-size: 14px;
+      color: white;
+      text-align: center;
+    }
+
+    .new-button:hover, .deposit-image-button:hover, .millpay-button:hover, .message-button:hover {
+      background-color: #003d54;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .credit-button:hover, .used-button:hover, .available-button:hover, .processing-button:hover {
+      background-color: #064750;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .accepted-button:hover {
+      background-color: #6B6B6B;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .white-block {
+      position: absolute;
+      width: 454px;
+      height: 454px;
+      background-color: white;
+      left: 188px;
+      top: 0px;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .new-block {
+      position: absolute;
+      width: 454px;
+      height: 151px;
+      background-color: white;
+      left: 652px;
+      top: 349px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+      z-index: 10;
+    }
+
+    .new-block-empty {
+      position: absolute;
+      width: 454px;
+      height: 151px;
+      background-color: white;
+      left: 652px;
+      top: 510px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+      z-index: 10;
+    }
+
+    .new-block-lower {
+      position: absolute;
+      width: 454px;
+      height: 302.4px;
+      background-color: white;
+      left: 652px;
+      top: 672.34px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+      z-index: 10;
+    }
+
+    .new-empty-block {
+      position: absolute;
+      width: 454px;
+      height: 151px;
+      background-color: white;
+      left: 188px;
+      top: 818.22px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+      z-index: 10;
+    }
+
+    .new-block .mlog-image {
+      width: 30%;
+      height: 30%;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -19px;
+    }
+
+    .new-block .miloc-image {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      margin-left: 113.6px;
+      margin-right: auto;
+      margin-top: 10px;
+    }
+
+    .new-block .milph-image {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      margin-left: -10.8px;
+      margin-top: -20px;
+    }
+
+    .new-block .milmas-image {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      margin-left: 132.6px;
+      margin-top: -20px;
+    }
+
+    .new-block .mili-image {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      margin-left: 280px;
+      margin-top: -28px;
+    }
+
+    .new-block .locations-text {
+      font-size: 12px;
+      color: #333;
+      margin-top: -13.9px;
+      margin-left: -199.8px;
+      display: block;
+    }
+
+    .new-block .call-text {
+      font-size: 12px;
+      color: #333;
+      margin-top: 4.88px;
+      margin-left: -10.8px;
+      display: block;
+    }
+
+    .new-block .message-text {
+      font-size: 12px;
+      color: #333;
+      margin-top: -14.12px;
+      margin-left: 132.6px;
+      display: block;
+    }
+
+    .new-block .info-text {
+      font-size: 12px;
+      color: #333;
+      margin-top: -14.12px;
+      margin-left: 280px;
+      display: block;
+    }
+
+    .white-block span, .new-block-empty span, .new-block-lower span, .new-empty-block span {
+      position: absolute;
+      font-size: 18px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .white-block .transaction, .new-block-empty .credit-checks, .new-block-lower .messages, .new-empty-block .payments {
+      top: 10px;
+      left: 10px;
+    }
+
+    .new-block-empty .processing-button {
+      width: 150px;
+      height: 40px;
+      top: 40px;
+      left: 10px;
+      font-size: 16px;
+      color: white;
+      background-color: #085660;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .new-block-empty .accepted-button {
+      width: 150px;
+      height: 40px;
+      top: 40px;
+      left: 170px;
+      font-size: 16px;
+      color: white;
+      background-color: #808080;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .new-block-empty .pay-installment {
+      position: absolute;
+      top: 104.32px;
+      left: 123.4px;
+      font-size: 18px;
+      color: #333;
+      font-weight: normal;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .new-block-empty .pay-installment:hover {
+      color: #064750;
+      text-decoration: underline;
+    }
+
+    .new-block-empty .milc-image {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 100.54px;
+      left: 94.4px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .new-block-lower .millist-image, .new-block-lower .milat-image, .new-block-lower .miljef-image, .new-block-lower .millis-image {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 10px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .new-block-lower .millist-image {
+      top: 55.12px;
+    }
+
+    .new-block-lower .milat-image {
+      top: 113.58px;
+    }
+
+    .new-block-lower .miljef-image {
+      top: 170.56px;
+    }
+
+    .new-block-lower .millis-image {
+      top: 219.86px;
+    }
+
+    .new-empty-block .milp-image, .new-empty-block .miltime-image {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      left: 10px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .new-empty-block .milp-image {
+      top: 40px;
+    }
+
+    .new-empty-block .miltime-image {
+      top: 98px;
+    }
+
+    .new-empty-block .make-payment {
+      position: absolute;
+      top: 48px;
+      left: 68px;
+      font-size: 18px;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .new-empty-block .make-payment:hover {
+      color: #064750;
+      text-decoration: underline;
+    }
+
+    .new-empty-block .your-town-utilities {
+      position: absolute;
+      top: 106px;
+      left: 68px;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .new-empty-block .your-town-utilities:hover {
+      color: #064750;
+      text-decoration: underline;
+    }
+
+    .new-empty-block .amount-due {
+      position: absolute;
+      top: 106px;
+      left: 280px;
+      font-size: 14px;
+      color: #000;
+      font-weight: normal;
+    }
+
+    .new-block-lower .holiday-hours {
+      position: absolute;
+      top: 58.9px;
+      left: 42px;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .new-block-lower .holiday-date {
+      position: absolute;
+      top: 58.9px;
+      left: 414.6px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+    }
+
+    .new-block-lower .brunch-text {
+      position: absolute;
+      top: 77.9px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .new-block-lower .low-funds {
+      position: absolute;
+      top: 117.36px;
+      left: 42px;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .new-block-lower .low-funds-date {
+      position: absolute;
+      top: 117.36px;
+      left: 414.6px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+    }
+
+    .new-block-lower .savings-status {
+      position: absolute;
+      top: 136.36px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .new-block-lower .jennifer-text {
+      position: absolute;
+      top: 170.56px;
+      left: 42px;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .new-block-lower .jennifer-date {
+      position: absolute;
+      top: 170.56px;
+      left: 414.6px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+    }
+
+    .new-block-lower .contract-text {
+      position: absolute;
+      top: 189.56px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .new-block-lower .home-improvement-text {
+      position: absolute;
+      top: 219.86px;
+      left: 42px;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .new-block-lower .home-improvement-date {
+      position: absolute;
+      top: 219.86px;
+      left: 414.6px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+    }
+
+    .new-block-lower .get-started-text {
+      position: absolute;
+      top: 238.86px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .new-block-lower .see-more {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 16px;
+      color: #085660;
+      font-weight: normal;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .new-block-lower .see-more:hover {
+      color: #064750;
+      text-decoration: underline;
+    }
+
+    .white-block .details {
+      top: 70px;
+      left: 10px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 20px);
+    }
+
+    .white-block .details::before {
+      content: "Galleria Town Cinema";
+    }
+
+    .white-block .details::after {
+      content: "$14.89";
+    }
+
+    .white-block .date {
+      position: absolute;
+      top: 94px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .white-block .details-second {
+      position: absolute;
+      top: 120px;
+      left: 10px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 20px);
+    }
+
+    .white-block .details-second::before {
+      content: "Georges BBQ & PUB";
+    }
+
+    .white-block .details-second::after {
+      content: "$57.42";
+    }
+
+    .white-block .date-second {
+      position: absolute;
+      top: 144px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .white-block .details-third {
+      position: absolute;
+      top: 170px;
+      left: 10px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 20px);
+    }
+
+    .white-block .details-third::before {
+      content: "Mike's Barbershop";
+    }
+
+    .white-block .details-third::after {
+      content: "$25.61";
+    }
+
+    .white-block .date-third {
+      position: absolute;
+      top: 194px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .white-block .details-fourth {
+      position: absolute;
+      top: 220px;
+      left: 10px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 20px);
+    }
+
+    .white-block .details-fourth::before {
+      content: "Valero Gas Station";
+    }
+
+    .white-block .details-fourth::after {
+      content: "$64.41";
+    }
+
+    .white-block .date-fourth {
+      position: absolute;
+      top: 244px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .white-block .details-fifth {
+      position: absolute;
+      top: 270px;
+      left: 10px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 20px);
+    }
+
+    .white-block .details-fifth::before {
+      content: "LE PETITE CAFE";
+    }
+
+    .white-block .details-fifth::after {
+      content: "$13.98";
+    }
+
+    .white-block .date-fifth {
+      position: absolute;
+      top: 294px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .white-block .details-sixth {
+      position: absolute;
+      top: 320px;
+      left: 10px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 20px);
+    }
+
+    .white-block .details-sixth::before {
+      content: "Uber Eats";
+    }
+
+    .white-block .details-sixth::after {
+      content: "$60.01";
+    }
+
+    .white-block .date-sixth {
+      position: absolute;
+      top: 344px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .white-block .see-more {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 16px;
+      color: #085660;
+      font-weight: normal;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .white-block .see-more:hover {
+      color: #064750;
+      text-decoration: underline;
+    }
+
+    .credit-button-content, .used-button-content, .available-button-content {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .credit-amount, .used-amount {
+      margin-left: 130px;
+    }
+
+    .available-amount {
+      margin-left: 50px;
+    }
+
+    .available-label {
+      white-space: nowrap;
+      margin-right: 24px;
+    }
+  </style>
+</head>
+<body>
+  <img src="images/millfml.jpg" alt="Millfml Image">
+  <div class="greeting">Hi, Jawier</div>
+  <img src="images/jaw.jpg" alt="Profile Image" class="profile-image">
+  <div class="credit-button">
+    <div class="credit-button-content">
+      <span>Credit limit</span>
+      <span class="credit-amount">$15,499</span>
+    </div>
+  </div>
+  <div class="used-button">
+    <div class="used-button-content">
+      <span>Used</span>
+      <span class="used-amount">$9,512.21</span>
+    </div>
+  </div>
+  <div class="available-button">
+    <div class="available-button-content">
+      <span class="available-label">Available for use</span>
+      <span class="available-amount">$5,986.21</span>
+    </div>
+  </div>
+  <div class="new-button">
+    <img src="images/milltrf.jpg" alt="Milltrf image">
+    <span>Transfer</span>
+  </div>
+  <div class="deposit-image-button">
+    <img src="images/milldep.jpg" alt="Milldep image">
+    <span>Deposit</span>
+  </div>
+  <div class="millpay-button">
+    <img src="images/milp2.jpg" alt="Milp2 image">
+    <span>Pay</span>
+  </div>
+  <div class="message-button">
+    <img src="images/milmas2.jpg" alt="Milmas2 image">
+    <span>Message</span>
+  </div>
+  <div class="white-block">
+    <span class="transaction">Transactions</span>
+    <span class="details"></span>
+    <span class="date">Sep 7</span>
+    <span class="details-second"></span>
+    <span class="date-second">Sep 3</span>
+    <span class="details-third"></span>
+    <span class="date-third">Sep 3</span>
+    <span class="details-fourth"></span>
+    <span class="date-fourth">Sep 2</span>
+    <span class="details-fifth"></span>
+    <span class="date-fifth">Sep 2</span>
+    <span class="details-sixth"></span>
+    <span class="date-sixth">Aug 30</span>
+    <span class="see-more">See more</span>
+  </div>
+  <div class="new-block">
+    <img src="images/mlog.jpg" alt="Mlog Image" class="mlog-image">
+    <img src="images/miloc.jpg" alt="Miloc Image" class="miloc-image">
+    <img src="images/milph.jpg" alt="Milph Image" class="milph-image">
+    <img src="images/milmas.jpg" alt="Milmas Image" class="milmas-image">
+    <img src="images/mili.jpg" alt="Mili Image" class="mili-image">
+    <span class="call-text">Call</span>
+    <span class="locations-text">Locations</span>
+    <span class="message-text">Message</span>
+    <span class="info-text">Info</span>
+  </div>
+  <div class="new-block-empty">
+    <span class="credit-checks">Credit checks</span>
+    <div class="processing-button">0 Processing</div>
+    <div class="accepted-button">4 Accepted</div>
+    <img src="images/milc.jpg" alt="Milc Image" class="milc-image">
+    <span class="pay-installment">Pay installment</span>
+  </div>
+  <div class="new-block-lower">
+    <span class="messages">Messages</span>
+    <img src="images/millist.jpg" alt="Millist Image" class="millist-image">
+    <span class="holiday-hours">Holiday Hours</span>
+    <span class="holiday-date">Sep 3</span>
+    <span class="brunch-text">Our brunch will be organized on Monday</span>
+    <img src="images/milat.jpg" alt="Milat Image" class="milat-image">
+    <span class="low-funds">Low Funds: Checking</span>
+    <span class="low-funds-date">Sep 3</span>
+    <span class="savings-status">Check the status of your savings account</span>
+    <img src="images/miljef.jpeg" alt="Miljef Image" class="miljef-image">
+    <span class="jennifer-text">Jennifer</span>
+    <span class="jennifer-date">Sep 1</span>
+    <span class="contract-text">No problem, we will send you a copy of the contract</span>
+    <img src="images/millis.jpg" alt="Millis Image" class="millis-image">
+    <span class="home-improvement-text">Home Improvement</span>
+    <span class="home-improvement-date">Sep 1</span>
+    <span class="get-started-text">Find out how you can get started</span>
+    <span class="see-more">See more</span>
+  </div>
+  <div class="new-empty-block">
+    <span class="payments">Payments</span>
+    <img src="images/milp.jpg" alt="Milp Image" class="milp-image">
+    <span class="make-payment" onclick="makePayment()">Make a payment</span>
+    <img src="images/miltime.jpg" alt="Miltime Image" class="miltime-image">
+    <span class="your-town-utilities" onclick="yourTownUtilities()">Your Town Utilities</span>
+    <span class="amount-due">$291,00</span>
+  </div>
+  <script>
+    function makePayment() {
+      console.log("Make a payment clicked!");
+      // Додайте тут код для обробки платежу, якщо потрібно
+    }
+
+    function yourTownUtilities() {
+      console.log("Your Town Utilities clicked!");
+      // Додайте тут код для обробки кліку по Your Town Utilities, якщо потрібно
+    }
+  </script>
+</body>
+</html>

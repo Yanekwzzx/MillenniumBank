@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untitled</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&display=swap">
+  <style>
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+    }
+
+    /* Шапка */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      height: 234.46px;
+      width: 100%;
+    }
+
+    .header-top {
+      background-color: #0f525f;
+      height: 92.53px;
+      color: #fff;
+      padding: 5px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-right: 170px;
+    }
+
+    .header-top .top-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    .header-top .bottom-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-left: 2px;
+    }
+
+    .header-top .description-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .header-top a {
+      margin: 0;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 2px;
+    }
+
+    .header-top a:hover {
+      text-decoration: underline;
+    }
+
+    .header-top a img {
+      margin-left: 0.83em;
+    }
+
+    .header-top a:nth-child(2) img {
+      margin-left: 1.16em;
+    }
+
+    .header-top .bottom-row span {
+      font-weight: normal;
+    }
+
+    .header-top .bottom-row span strong {
+      font-weight: bold;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+
+    .header-bottom {
+      background-color: #ffffff;
+      height: 141.93px;
+      width: 100%;
+      padding: 10px 20px;
+      box-sizing: border-box;
+    }
+
+    /* FDIC */
+    #fdic-container {
+      position: fixed;
+      top: 101.53px;
+      left: 337px;
+      z-index: 1001;
+    }
+
+    .fdic-text {
+      font-size: 14px;
+      line-height: 1.5;
+      position: relative;
+      left: -3.2cm;
+    }
+
+    .fdic-main {
+      color: #122062;
+      font-weight: 900;
+      font-size: 21px;
+    }
+
+    /* Логотип та Banking текст */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      position: relative;
+      left: -3.2cm;
+    }
+
+    .mill-logo {
+      width: 180px;
+      height: auto;
+    }
+
+    .banking-wrapper {
+      display: flex;
+      align-items: center;
+      margin-left: 1.5cm;
+      gap: 1.5cm;
+      position: relative;
+    }
+
+    .banking-text {
+      color: #0f525f;
+      font-weight: bold;
+      font-size: 20px;
+      white-space: nowrap;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .banking-text:hover {
+      text-decoration: underline;
+    }
+
+    /* Стрічка логіну */
+    .login-bar {
+      display: flex;
+      width: 254.64px;
+      height: 38px;
+      margin-left: -3mm;
+      flex-direction: column;
+      margin-top: -1cm;
+      position: relative;
+    }
+
+    .login-label {
+      font-size: 14px;
+      font-weight: bold;
+      color: #405b61;
+      margin-bottom: 2px;
+    }
+
+    .login-top {
+      display: flex;
+      width: 100%;
+      height: 38px;
+    }
+
+    .login-part1 {
+      width: 177.6px;
+      height: 38px;
+      background-color: #e4e4e4;
+    }
+
+    .login-input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      padding: 0 8px;
+      font-size: 14px;
+      background-color: #e4e4e4;
+      outline: none;
+    }
+
+    .login-part2 {
+      width: 77.04px;
+      height: 38px;
+      background-color: #085560;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-part2:hover {
+      opacity: 0.9;
+    }
+
+    .login-bottom {
+      margin-top: 2px;
+      font-size: 11px;
+      color: #405b61;
+      text-align: left;
+      padding-left: 4px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .login-bottom:hover {
+      text-decoration: none;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 11px;
+      margin-top: 2px;
+      text-align: left;
+      padding-left: 4px;
+      display: none;
+    }
+
+    /* Блоки з картинками */
+    .images-container {
+      display: flex;
+      flex-direction: row;
+      margin-top: 234.46px;
+    }
+
+    .liveeasily-block {
+      background-color: #0f525f;
+      width: 932px;
+      height: 568px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .liveeasily-img {
+      max-width: 80%;
+      height: auto;
+    }
+
+    .millfamily-img {
+      display: block;
+      width: 932px;
+      height: auto;
+    }
+
+    /* Новий блок 3 секції */
+    .three-sections {
+      display: flex;
+      width: 1496px;
+      height: 507.6px;
+      margin: 0 auto;
+    }
+
+    .section {
+      width: 498.66px;
+      height: 507.6px;
+      position: relative;
+    }
+
+    .section.left, .section.right {
+      background-color: #f4f4f4;
+    }
+
+    .section.center {
+      background-color: #e4e4e4;
+    }
+
+    /* Ліва секція */
+    .section.left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 3cm;
+    }
+
+    .section.left img {
+      width: 23.085%;
+      height: auto;
+    }
+
+    .section.left .label-text {
+      margin-top: calc(10px + 1cm);
+      font-size: 32px;
+      font-weight: 500;
+      color: #000000;
+    }
+
+    .section.left .subtext {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #000000;
+      text-align: center;
+      max-width: 80%;
+    }
+
+    .section.left .button {
+      margin-top: 15px;
+      width: 155.19px;
+      height: 45.6px;
+      background-color: #0f525f;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .section.left .button:hover {
+      opacity: 0.9;
+    }
+
+    /* Центр секція */
+    .section.center {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 2cm;
+    }
+
+    .section.center img {
+      width: 23.085%;
+      height: auto;
+    }
+
+    .section.center .label-text {
+      margin-top: calc(10px + 0.3cm);
+      font-size: 32px;
+      font-weight: 500;
+      color: #000000;
+    }
+
+    .section.center .subtext {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #000000;
+      text-align: center;
+      max-width: 80%;
+    }
+
+    .section.center .button {
+      margin-top: 15px;
+      width: 262.03px;
+      height: 50.16px;
+      background-color: #0f525f;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .section.center .button:hover {
+      opacity: 0.9;
+    }
+
+    /* Права секція */
+    .section.right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: calc(3cm - 0.9cm);
+    }
+
+    .section.right img {
+      width: 23.085%;
+      height: auto;
+    }
+
+    .section.right .label-text {
+      margin-top: calc(10px + 0.4cm);
+      font-size: 32px;
+      font-weight: 500;
+      color: #000000;
+    }
+
+    .section.right .subtext {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #000000;
+      text-align: center;
+      max-width: 80%;
+    }
+
+    .section.right .button {
+      margin-top: 15px;
+      width: 275.87px;
+      height: 50.16px;
+      background-color: #0f525f;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .section.right .button:hover {
+      opacity: 0.9;
+    }
+
+    /* Banking On-The-Go під лівим блоком */
+    .banking-onthego-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-top: 20px;
+      margin-left: calc((100% - 1496px)/2 + 0px);
+    }
+
+    .banking-onthego {
+      font-size: 32px;
+      font-weight: bold;
+      color: #0f525f;
+      line-height: 1.2;
+      position: relative;
+      left: 10cm;
+      padding-left: 0.5em;
+    }
+
+    .banking-onthego-subtext {
+      font-size: 16px;
+      font-weight: 400;
+      color: #000000;
+      position: relative;
+      left: 8.3cm;
+      margin-top: 10px;
+      max-width: 300px;
+      white-space: pre;
+    }
+
+    .follow-us-text {
+      font-size: 16px;
+      font-weight: 400;
+      color: #000000;
+      position: absolute;
+      left: calc(8.3cm + 300px + 10px + 6cm);
+      top: calc(234.46px + 568px + 507.6px + 20px + 32px + 10px + 2cm - 2mm);
+      max-width: 300px;
+      padding-left: 60px;
+    }
+
+    .banking-onthego-button {
+      margin-top: 15px;
+      width: 146.41px;
+      height: 50.16px;
+      background-color: #085660;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      left: calc(8.3cm + 2.5cm - 3mm);
+    }
+
+    .banking-onthego-button:hover {
+      opacity: 0.9;
+    }
+
+    .millphone-img {
+      width: 146.41px;
+      height: auto;
+      position: relative;
+      left: calc(8.3cm + 2.5cm - 3mm);
+      margin-top: calc(15px + 12mm);
+    }
+
+    .millvideo {
+      width: 350px;
+      height: auto;
+      position: absolute;
+      left: calc(21.8cm + 146.41px + 10px - 3mm - 4cm + 2cm - 1cm);
+      top: calc(221.92px + 40cm - 3cm + 1.7cm);
+      margin-bottom: 7cm;
+    }
+
+    .youtube-button {
+      width: 257.18px;
+      height: 50.16px;
+      background-color: #085660;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      left: calc(8.3cm + 2.5cm - 3mm + 146.41px + 10px + 7cm + 2.5cm - 1mm - 2mm - 2mm);
+      top: calc(234.46px + 568px + 507.6px + 20px + 32px + 10px + 15px + 5cm - 0.5cm - 1mm);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .youtube-button:hover {
+      opacity: 0.9;
+    }
+
+    .youtube-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: calc(-204px - 11.1cm + 1mm);
+      margin-right: calc((100% - 1496px)/2 + 0px);
+      position: relative;
+      left: -11cm;
+    }
+
+    .youtube-text {
+      font-size: 32px;
+      font-weight: bold;
+      color: #0f525f;
+      line-height: 1.2;
+      text-align: right;
+    }
+
+    .bottom-block {
+      width: 100%;
+      height: 430.73px;
+      background-color: #085660;
+      margin: 19cm auto 0;
+      position: relative;
+    }
+
+    .millhouse-img {
+      display: block;
+      position: absolute;
+      bottom: 5.7cm;
+      left: calc(50% + 10.3cm);
+      transform: translateX(-50%);
+      max-width: 80%;
+      height: auto;
+    }
+
+    .milljha-img {
+      display: block;
+      position: absolute;
+      bottom: 1.7cm;
+      left: calc(50% - 10.3cm);
+      transform: translateX(-50%);
+      max-width: 60%;
+      height: auto;
+    }
+
+    .about-us-text {
+      position: absolute;
+      top: 2cm;
+      left: calc(50% - 13cm);
+      transform: translateX(-50%);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .about-us-text:hover {
+      color: #f28c38;
+      text-decoration: underline;
+    }
+
+    .faq-text {
+      position: absolute;
+      top: 2cm;
+      left: calc(50% - 13cm + 4cm);
+      transform: translateX(-50%);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .faq-text:hover {
+      color: #f28c38;
+      text-decoration: underline;
+    }
+
+    .usa-patriot-act-text {
+      position: absolute;
+      top: 2cm;
+      left: calc(50% - 13cm + 8.2cm);
+      transform: translateX(-50%);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .usa-patriot-act-text:hover {
+      color: #f28c38;
+      text-decoration: underline;
+    }
+
+    .fdic-notice-text {
+      position: absolute;
+      top: 3cm;
+      left: calc(50% - 13cm + 8.2cm);
+      transform: translateX(-50%);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .fdic-notice-text:hover {
+      color: #f28c38;
+      text-decoration: underline;
+    }
+
+    .online-security-text {
+      position: absolute;
+      top: 4cm;
+      left: calc(50% - 13cm + 8.2cm);
+      transform: translateX(-50%);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .online-security-text:hover {
+      color: #f28c38;
+      text-decoration: underline;
+    }
+
+    .privacy-policy-text {
+      position: absolute;
+      top: 3cm;
+      left: calc(50% - 13cm + 4cm);
+      transform: translateX(-50%);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .privacy-policy-text:hover {
+      color: #f28c38;
+      text-decoration: underline;
+    }
+
+    .terms-of-use-text {
+      position: absolute;
+      top: 4cm;
+      left: calc(50% - 13cm + 4cm);
+      transform: translateX(-50%);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .terms-of-use-text:hover {
+      color: #f28c38;
+      text-decoration: underline;
+    }
+
+    .contact-text {
+      position: absolute;
+      top: 3cm;
+      left: calc(50% - 13cm - 2mm);
+      transform: translateX(-50%);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .contact-text:hover {
+      color: #f28c38;
+      text-decoration: underline;
+    }
+
+    .locations-text {
+      position: absolute;
+      top: 4cm;
+      left: calc(50% - 13cm - 2mm);
+      transform: translateX(-50%);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .locations-text:hover {
+      color: #f28c38;
+      text-decoration: underline;
+    }
+
+    .cra-public-file-text {
+      position: absolute;
+      top: 5cm;
+      left: calc(50% - 13cm - 1mm + 3mm);
+      transform: translateX(-50%);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .cra-public-file-text:hover {
+      color: #f28c38;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-top">
+      <div class="top-row">
+        <a href="#" onclick="return false;">Reorder Checks<img src="images/phone.jpg" alt="Phone" class="icon"></a>
+        <a href="#" onclick="return false;">Call Us<img src="images/location.jpg" alt="Location" class="icon"></a>
+        <a href="#" onclick="return false;">Locations<img src="images/search.jpg" alt="Search" class="icon"></a>
+      </div>
+      <div class="bottom-row">
+        <span>Tennessee - <strong>(423) 238-1111</strong> • <strong>Florida - 1 (866) 691-5646</strong></span>
+      </div>
+      <div class="description-row">
+        <span>Proudly serving the greater Chattanooga area and Lake City, Gainesville and Ocala, Florida.</span>
+      </div>
+    </div>
+    <div class="header-bottom"></div>
+  </header>
+
+  <!-- FDIC + Логотип + Banking текст -->
+  <div id="fdic-container">
+    <div class="fdic-text">
+      <strong class="fdic-main">FDIC</strong>
+      <em style="font-size: 10px;">FDIC-Insured - Backed by the full faith and credit of the U.S. Government</em>
+    </div>
+    <div class="logo-container">
+      <img src="images/MillLogo.jpg" alt="MillLogo" class="mill-logo">
+      <div class="banking-wrapper">
+        <span class="banking-text personal">Personal Banking</span>
+        <span class="banking-text business">Business Banking</span>
+        <span class="banking-text ebanking">E-Banking</span>
+        <span class="banking-text about">About Us</span>
+
+        <!-- Стрічка логіну -->
+        <div class="login-bar">
+          <div class="login-label">Online Banking</div>
+          <form id="login-form">
+            <div class="login-top">
+              <div class="login-part1">
+                <input type="text" id="username" class="login-input" placeholder="Enter Username" required>
+              </div>
+              <button type="submit" class="login-part2">Log In</button>
+            </div>
+          </form>
+          <div class="login-bottom">Forgot Password | Enroll</div>
+          <div id="error-message" class="error-message">ERROR 505</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Блок LiveEasily + MillFamily -->
+  <div class="images-container">
+    <div class="liveeasily-block">
+      <img src="images/liveeasily.png" alt="LiveEasily" class="liveeasily-img">
+    </div>
+    <img src="images/millfamily.jpg" alt="Mill Family" class="millfamily-img">
+  </div>
+
+  <!-- Новий блок 3 секції -->
+  <div class="three-sections">
+    <div class="section left">
+      <img src="images/mpb.png" alt="mpb">
+      <div class="label-text">Personal Banking</div>
+      <div class="subtext">
+        Millennium Bank gives you the attention you deserve as you start your financial journey.
+      </div>
+      <button class="button">About Banking</button>
+    </div>
+    <div class="section center">
+      <img src="images/mbb.png" alt="mbb">
+      <div class="label-text">Business Banking</div>
+      <div class="subtext">
+        Let Millennium Bank be your choice for growing businesses.
+      </div>
+      <button class="button">Discover Business Banking</button>
+    </div>
+    <div class="section right">
+      <img src="images/mlm.png" alt="mlm">
+      <div class="label-text">Loans & Mortgage</div>
+      <div class="subtext">
+        Home buying should be an exciting process. At Millennium Bank, our local loan process minimizes the wait time for buyers and sellers.
+      </div>
+      <button class="button">Discover Loans & Mortgages</button>
+    </div>
+  </div>
+
+  <!-- Banking On-The-Go під лівим блоком -->
+  <div class="banking-onthego-container">
+    <div class="banking-onthego">
+      Banking<br>
+      On-The-Go
+    </div>
+    <div class="banking-onthego-subtext">
+Millennium's mobile banking allows you to enjoy
+ our local banking experience from anywhere in
+                                    the world.
+    </div>
+    <div class="follow-us-text">
+      Follow us to stay up to date with our latest happenings.
+    </div>
+    <button class="banking-onthego-button">Get Started</button>
+    <img src="images/millphone.png" alt="Millennium Phone" class="millphone-img">
+    <video class="millvideo" controls>
+      <source src="images/millvideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button class="youtube-button">Millennium Bank YouTube</button>
+  </div>
+
+  <!-- Check us out on YouTube! під правим блоком -->
+  <div class="youtube-container">
+    <div class="youtube-text">
+      Check us out on<br>
+      YouTube!
+    </div>
+  </div>
+
+  <!-- Новий блок внизу -->
+  <div class="bottom-block">
+    <img src="images/millhouse.png" alt="Mill House" class="millhouse-img">
+    <img src="images/milljha.png" alt="Mill Jha" class="milljha-img">
+    <a href="#" onclick="return false;" class="about-us-text">About Us</a>
+    <a href="#" onclick="return false;" class="faq-text">FAQ</a>
+    <a href="#" onclick="return false;" class="usa-patriot-act-text">USA PATRIOT Act</a>
+    <a href="#" onclick="return false;" class="fdic-notice-text">FDIC Notice</a>
+    <a href="#" onclick="return false;" class="online-security-text">Online Security</a>
+    <a href="#" onclick="return false;" class="privacy-policy-text">Privacy Policy</a>
+    <a href="#" onclick="return false;" class="terms-of-use-text">Terms of Use</a>
+    <a href="#" onclick="return false;" class="contact-text">Contact</a>
+    <a href="#" onclick="return false;" class="locations-text">Locations</a>
+    <a href="#" onclick="return false;" class="cra-public-file-text">CRA Public File</a>
+  </div>
+
+  <div id="main" role="main"></div>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const errorMessage = document.getElementById('error-message');
+
+      if (username === 'jawiermuller@gmail.com') {
+        window.location.href = 'next.html';
+      } else {
+        errorMessage.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+

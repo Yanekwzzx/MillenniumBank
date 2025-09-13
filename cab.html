@@ -4,44 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cabinet</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&display=swap">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
+      height: 100vh;
       background-color: #f0f0f0;
-      font-family: 'Source Sans 3', sans-serif;
-      overflow-x: hidden;
-      min-width: 20rem; /* 320px */
-      max-width: 120rem; /* 1920px */
-      margin: 0 auto;
-      min-height: 100vh;
     }
 
     img {
       width: 100%;
       height: auto;
       display: block;
-      object-fit: cover;
     }
 
     .greeting {
       position: absolute;
-      top: 5.44rem; /* 87px */
-      left: 11.75rem; /* 188px */
-      font-size: 1.875rem; /* 30px */
+      top: 87px;
+      left: 188px;
+      font-size: 30px;
       color: white;
     }
 
     .profile-image {
       position: absolute;
-      top: 5.44rem;
-      right: 3.13rem; /* 50px від правого краю */
-      width: 2.5rem; /* 40px */
-      height: 2.5rem;
+      top: 87px;
+      left: 1206.3px;
+      width: 40px;
+      height: 40px;
       object-fit: cover;
       border-radius: 50%;
       cursor: pointer;
@@ -49,254 +38,315 @@
     }
 
     .profile-image:hover {
-      transform: translateY(-0.125rem);
-      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .credit-button, .used-button, .available-button {
+    .credit-button, .used-button, .available-button, .processing-button, .accepted-button {
       position: absolute;
-      width: 21.19rem; /* 339px */
-      height: 4.69rem; /* 75px */
+      width: 339px;
+      height: 75px;
       background-color: #085660;
       color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.25rem; /* 20px */
-      border-radius: 0.5rem;
+      font-size: 20px;
+      border-radius: 8px;
+      margin-top: -5px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .credit-button {
-      left: 11.75rem;
-      top: 9.56rem; /* 153px */
+      left: 188px;
+      top: 153px;
     }
 
     .used-button {
-      left: 34.19rem; /* 547px */
-      top: 9.56rem;
+      left: 547px;
+      top: 153px;
     }
 
     .available-button {
-      left: 56.63rem; /* 906px */
-      top: 9.56rem;
-    }
-
-    .button-group {
-      position: absolute;
-      top: 14.88rem; /* 238px */
-      left: 11.75rem;
-      display: flex;
-      gap: 0.63rem; /* 10px */
+      left: 906px;
+      top: 153px;
     }
 
     .new-button, .deposit-image-button, .millpay-button, .message-button {
-      width: 4.69rem; /* 75px */
-      height: 4.69rem;
-      font-size: 0.875rem; /* 14px */
+      width: 75px;
+      height: 75px;
+      font-size: 14px;
       flex-direction: column;
-      gap: 0.125rem;
+      gap: 2px;
+      position: absolute;
       cursor: pointer;
       transition: all 0.3s ease;
       background-color: #004654;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 0.5rem;
+      border-radius: 8px;
+    }
+
+    .new-button {
+      left: 188px;
+      top: 238px;
+    }
+
+    .deposit-image-button {
+      left: 273px;
+      top: 238px;
+    }
+
+    .millpay-button {
+      left: 358px;
+      top: 238px;
+    }
+
+    .message-button {
+      left: 443px;
+      top: 238px;
     }
 
     .new-button img, .deposit-image-button img, .millpay-button img, .message-button img {
-      width: 1.88rem; /* 30px */
-      height: 1.88rem;
-      margin-top: 0.31rem;
+      width: 30px;
+      height: 30px;
+      margin-top: 5px;
     }
 
     .new-button span, .deposit-image-button span, .millpay-button span, .message-button span {
-      font-size: 0.875rem;
+      font-size: 14px;
       color: white;
       text-align: center;
     }
 
     .new-button:hover, .deposit-image-button:hover, .millpay-button:hover, .message-button:hover {
       background-color: #003d54;
-      transform: translateY(-0.125rem);
-      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .credit-button:hover, .used-button:hover, .available-button:hover {
+    .credit-button:hover, .used-button:hover, .available-button:hover, .processing-button:hover {
       background-color: #064750;
-      transform: translateY(-0.125rem);
-      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .accepted-button:hover {
+      background-color: #6B6B6B;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .white-block {
       position: absolute;
-      width: 28.38rem; /* 454px */
-      height: 28.38rem;
+      width: 454px;
+      height: 454px;
       background-color: white;
-      left: 11.75rem;
-      top: 21.81rem; /* 349px */
-      border-radius: 0.5rem;
-      padding: 1rem;
-      overflow: hidden;
+      left: 188px;
+      top: 0px;
+      border-radius: 8px;
+      position: relative;
     }
 
     .new-block {
       position: absolute;
-      width: 28.38rem;
-      height: 9.44rem; /* 151px */
+      width: 454px;
+      height: 151px;
       background-color: white;
-      left: 40.75rem; /* 652px */
-      top: 21.81rem;
-      border-radius: 0.5rem;
+      left: 652px;
+      top: 349px;
+      border-radius: 8px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 0.63rem;
-      padding: 1rem;
-      overflow: hidden;
+      overflow: visible;
+      z-index: 10;
     }
 
     .new-block-empty {
       position: absolute;
-      width: 28.38rem;
-      height: 9.44rem;
+      width: 454px;
+      height: 151px;
       background-color: white;
-      left: 40.75rem;
-      top: 31.88rem; /* 510px */
-      border-radius: 0.5rem;
+      left: 652px;
+      top: 510px;
+      border-radius: 8px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 0.63rem;
-      padding: 1rem;
-      overflow: hidden;
+      overflow: visible;
+      z-index: 10;
     }
 
     .new-block-lower {
       position: absolute;
-      width: 28.38rem;
-      height: 18.9rem; /* 302.4px */
+      width: 454px;
+      height: 302.4px;
       background-color: white;
-      left: 40.75rem;
-      top: 42.02rem; /* 672.34px */
-      border-radius: 0.5rem;
+      left: 652px;
+      top: 672.34px;
+      border-radius: 8px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      gap: 0.31rem;
-      padding: 1rem;
-      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+      z-index: 10;
     }
 
     .new-empty-block {
       position: absolute;
-      width: 28.38rem;
-      height: 9.44rem;
+      width: 454px;
+      height: 151px;
       background-color: white;
-      left: 11.75rem;
-      top: 51.14rem; /* 818.22px */
-      border-radius: 0.5rem;
+      left: 188px;
+      top: 818.22px;
+      border-radius: 8px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
-      gap: 0.31rem;
-      padding: 1rem;
-      overflow: hidden;
+      align-items: center;
+      overflow: visible;
+      z-index: 10;
     }
 
     .new-block .mlog-image {
       width: 30%;
       height: 30%;
       object-fit: contain;
-      border-radius: 0.5rem;
+      border-radius: 8px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -19px;
     }
 
-    .new-block .icon-row {
-      display: flex;
-      justify-content: space-evenly;
-      width: 100%;
-      gap: 0.63rem;
-    }
-
-    .new-block .icon-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.125rem;
-    }
-
-    .new-block .miloc-image, .new-block .milph-image, .new-block .milmas-image, .new-block .mili-image {
-      width: 1.25rem; /* 20px */
-      height: 1.25rem;
+    .new-block .miloc-image {
+      width: 20px;
+      height: 20px;
       object-fit: contain;
-      border-radius: 0.5rem;
+      border-radius: 8px;
+      display: block;
+      margin-left: 113.6px;
+      margin-right: auto;
+      margin-top: 10px;
     }
 
-    .new-block .locations-text, .new-block .call-text, .new-block .message-text, .new-block .info-text {
-      font-size: 0.75rem; /* 12px */
+    .new-block .milph-image {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      margin-left: -10.8px;
+      margin-top: -20px;
+    }
+
+    .new-block .milmas-image {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      margin-left: 132.6px;
+      margin-top: -20px;
+    }
+
+    .new-block .mili-image {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      margin-left: 280px;
+      margin-top: -28px;
+    }
+
+    .new-block .locations-text {
+      font-size: 12px;
       color: #333;
-      text-align: center;
+      margin-top: -13.9px;
+      margin-left: -199.8px;
+      display: block;
+    }
+
+    .new-block .call-text {
+      font-size: 12px;
+      color: #333;
+      margin-top: 4.88px;
+      margin-left: -10.8px;
+      display: block;
+    }
+
+    .new-block .message-text {
+      font-size: 12px;
+      color: #333;
+      margin-top: -14.12px;
+      margin-left: 132.6px;
+      display: block;
+    }
+
+    .new-block .info-text {
+      font-size: 12px;
+      color: #333;
+      margin-top: -14.12px;
+      margin-left: 280px;
+      display: block;
     }
 
     .white-block span, .new-block-empty span, .new-block-lower span, .new-empty-block span {
-      font-size: 1.125rem; /* 18px */
+      position: absolute;
+      font-size: 18px;
       color: #333;
       font-weight: bold;
     }
 
     .white-block .transaction, .new-block-empty .credit-checks, .new-block-lower .messages, .new-empty-block .payments {
-      margin-bottom: 0.63rem;
+      top: 10px;
+      left: 10px;
     }
 
-    .new-block-empty .button-group {
-      display: flex;
-      gap: 0.63rem;
-      position: static;
-    }
-
-    .new-block-empty .processing-button, .new-block-empty .accepted-button {
-      width: 9.38rem; /* 150px */
-      height: 2.5rem; /* 40px */
-      font-size: 1rem; /* 16px */
+    .new-block-empty .processing-button {
+      width: 150px;
+      height: 40px;
+      top: 40px;
+      left: 10px;
+      font-size: 16px;
       color: white;
       background-color: #085660;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 0.5rem;
+      border-radius: 8px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .new-block-empty .accepted-button {
+      width: 150px;
+      height: 40px;
+      top: 40px;
+      left: 170px;
+      font-size: 16px;
+      color: white;
       background-color: #808080;
-    }
-
-    .new-block-empty .processing-button:hover, .new-block-empty .accepted-button:hover {
-      background-color: #064750;
-      transform: translateY(-0.125rem);
-      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
-    }
-
-    .new-block-empty .accepted-button:hover {
-      background-color: #6B6B6B;
-    }
-
-    .new-block-empty .pay-row {
       display: flex;
       align-items: center;
-      gap: 0.63rem;
-      position: static;
+      justify-content: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
     .new-block-empty .pay-installment {
-      font-size: 1.125rem;
+      position: absolute;
+      top: 104.32px;
+      left: 123.4px;
+      font-size: 18px;
       color: #333;
       font-weight: normal;
       cursor: pointer;
@@ -309,411 +359,450 @@
     }
 
     .new-block-empty .milc-image {
-      width: 1.5rem; /* 24px */
-      height: 1.5rem;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 100.54px;
+      left: 94.4px;
       object-fit: contain;
-      border-radius: 0.5rem;
+      border-radius: 8px;
     }
 
-    .new-block-lower .message-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.125rem;
-      width: 100%;
-      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      padding-bottom: 0.125rem;
-    }
-
-    .new-block-lower .message-item img {
-      width: 1.5rem;
-      height: 1.5rem;
+    .new-block-lower .millist-image, .new-block-lower .milat-image, .new-block-lower .miljef-image, .new-block-lower .millis-image {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 10px;
       object-fit: contain;
-      border-radius: 0.5rem;
+      border-radius: 8px;
     }
 
-    .new-block-lower .message-title {
-      font-size: 1rem;
-      color: #333;
-      font-weight: bold;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.63rem;
-      width: 100%;
+    .new-block-lower .millist-image {
+      top: 55.12px;
     }
 
-    .new-block-lower .message-date {
-      font-size: 0.875rem;
-      color: #999;
-      font-weight: normal;
-      margin-left: auto;
+    .new-block-lower .milat-image {
+      top: 113.58px;
     }
 
-    .new-block-lower .message-text {
-      font-size: 0.875rem;
-      color: #999;
-      font-weight: normal;
-      margin-left: 2.13rem; /* 34px */
+    .new-block-lower .miljef-image {
+      top: 170.56px;
     }
 
-    .new-empty-block .payment-item {
-      display: flex;
-      align-items: center;
-      gap: 0.63rem;
-      width: 100%;
+    .new-block-lower .millis-image {
+      top: 219.86px;
     }
 
     .new-empty-block .milp-image, .new-empty-block .miltime-image {
-      width: 3rem; /* 48px */
-      height: 3rem;
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      left: 10px;
       object-fit: contain;
-      border-radius: 0.5rem;
+      border-radius: 8px;
     }
 
-    .new-empty-block .make-payment, .new-empty-block .your-town-utilities {
-      font-size: 1.125rem;
+    .new-empty-block .milp-image {
+      top: 40px;
+    }
+
+    .new-empty-block .miltime-image {
+      top: 98px;
+    }
+
+    .new-empty-block .make-payment {
+      position: absolute;
+      top: 48px;
+      left: 68px;
+      font-size: 18px;
       color: #333;
       font-weight: bold;
       cursor: pointer;
       transition: color 0.3s ease;
     }
 
-    .new-empty-block .make-payment:hover, .new-empty-block .your-town-utilities:hover {
+    .new-empty-block .make-payment:hover {
+      color: #064750;
+      text-decoration: underline;
+    }
+
+    .new-empty-block .your-town-utilities {
+      position: absolute;
+      top: 106px;
+      left: 68px;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .new-empty-block .your-town-utilities:hover {
       color: #064750;
       text-decoration: underline;
     }
 
     .new-empty-block .amount-due {
-      font-size: 0.875rem;
+      position: absolute;
+      top: 106px;
+      left: 280px;
+      font-size: 14px;
       color: #000;
       font-weight: normal;
-      margin-left: auto;
     }
 
-    .new-block-lower .see-more, .white-block .see-more {
-      font-size: 1rem;
+    .new-block-lower .holiday-hours {
+      position: absolute;
+      top: 58.9px;
+      left: 42px;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .new-block-lower .holiday-date {
+      position: absolute;
+      top: 58.9px;
+      left: 414.6px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+    }
+
+    .new-block-lower .brunch-text {
+      position: absolute;
+      top: 77.9px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px - 34.02px);
+      padding-bottom: 2px;
+      padding-left: 34.02px;
+    }
+
+    .new-block-lower .low-funds {
+      position: absolute;
+      top: 117.36px;
+      left: 42px;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .new-block-lower .low-funds-date {
+      position: absolute;
+      top: 117.36px;
+      left: 414.6px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+    }
+
+    .new-block-lower .savings-status {
+      position: absolute;
+      top: 136.36px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 54px);
+      padding-bottom: 2px;
+      padding-left: 34px;
+    }
+
+    .new-block-lower .jennifer-text {
+      position: absolute;
+      top: 170.56px;
+      left: 42px;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .new-block-lower .jennifer-date {
+      position: absolute;
+      top: 170.56px;
+      left: 414.6px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+    }
+
+    .new-block-lower .contract-text {
+      position: absolute;
+      top: 189.56px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 54px);
+      padding-bottom: 2px;
+      padding-left: 34px;
+    }
+
+    .new-block-lower .home-improvement-text {
+      position: absolute;
+      top: 219.86px;
+      left: 42px;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .new-block-lower .home-improvement-date {
+      position: absolute;
+      top: 219.86px;
+      left: 414.6px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+    }
+
+    .new-block-lower .get-started-text {
+      position: absolute;
+      top: 238.86px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 54px);
+      padding-bottom: 2px;
+      padding-left: 34px;
+    }
+
+    .new-block-lower .see-more {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 16px;
       color: #085660;
       font-weight: normal;
       cursor: pointer;
       transition: color 0.3s ease;
-      align-self: flex-end;
     }
 
-    .new-block-lower .see-more:hover, .white-block .see-more:hover {
+    .new-block-lower .see-more:hover {
       color: #064750;
       text-decoration: underline;
     }
 
-    .white-block .transaction-item {
+    .white-block .details {
+      top: 70px;
+      left: 10px;
       display: flex;
       justify-content: space-between;
-      width: 100%;
-      font-size: 0.875rem;
-      margin-bottom: 0.125rem;
+      width: calc(100% - 20px);
     }
 
-    .white-block .transaction-item::before,
-    .white-block .transaction-item::after {
-      content: attr(data-before);
-      display: inline-block;
+    .white-block .details::before {
+      content: "Galleria Town Cinema";
     }
 
-    .white-block .transaction-item::after {
-      content: attr(data-after);
+    .white-block .details::after {
+      content: "$14.89";
     }
 
     .white-block .date {
-      font-size: 0.875rem;
+      position: absolute;
+      top: 94px;
+      left: 10px;
+      font-size: 14px;
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: 100%;
-      padding-bottom: 0.125rem;
-      margin-bottom: 0.63rem;
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .white-block .details-second {
+      position: absolute;
+      top: 120px;
+      left: 10px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 20px);
+    }
+
+    .white-block .details-second::before {
+      content: "Georges BBQ & PUB";
+    }
+
+    .white-block .details-second::after {
+      content: "$57.42";
+    }
+
+    .white-block .date-second {
+      position: absolute;
+      top: 144px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .white-block .details-third {
+      position: absolute;
+      top: 170px;
+      left: 10px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 20px);
+    }
+
+    .white-block .details-third::before {
+      content: "Mike's Barbershop";
+    }
+
+    .white-block .details-third::after {
+      content: "$25.61";
+    }
+
+    .white-block .date-third {
+      position: absolute;
+      top: 194px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .white-block .details-fourth {
+      position: absolute;
+      top: 220px;
+      left: 10px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 20px);
+    }
+
+    .white-block .details-fourth::before {
+      content: "Valero Gas Station";
+    }
+
+    .white-block .details-fourth::after {
+      content: "$64.41";
+    }
+
+    .white-block .date-fourth {
+      position: absolute;
+      top: 244px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .white-block .details-fifth {
+      position: absolute;
+      top: 270px;
+      left: 10px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 20px);
+    }
+
+    .white-block .details-fifth::before {
+      content: "LE PETITE CAFE";
+    }
+
+    .white-block .details-fifth::after {
+      content: "$13.98";
+    }
+
+    .white-block .date-fifth {
+      position: absolute;
+      top: 294px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .white-block .details-sixth {
+      position: absolute;
+      top: 320px;
+      left: 10px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 20px);
+    }
+
+    .white-block .details-sixth::before {
+      content: "Uber Eats";
+    }
+
+    .white-block .details-sixth::after {
+      content: "$60.01";
+    }
+
+    .white-block .date-sixth {
+      position: absolute;
+      top: 344px;
+      left: 10px;
+      font-size: 14px;
+      color: #999;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+      width: calc(100% - 20px);
+      padding-bottom: 2px;
+    }
+
+    .white-block .see-more {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 16px;
+      color: #085660;
+      font-weight: normal;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .white-block .see-more:hover {
+      color: #064750;
+      text-decoration: underline;
     }
 
     .credit-button-content, .used-button-content, .available-button-content {
       display: inline-flex;
       align-items: center;
-      gap: 0.63rem;
     }
 
     .credit-amount, .used-amount {
-      margin-left: 2rem; /* 32px */
+      margin-left: 130px;
     }
 
     .available-amount {
-      margin-left: 1rem;
+      margin-left: 50px;
     }
 
     .available-label {
       white-space: nowrap;
+      margin-right: 24px;
     }
 
+    /* Додано стилі для підкреслення транзакцій при наведенні */
     .white-block .transaction-item:hover::before,
     .white-block .transaction-item:hover::after {
       text-decoration: underline;
       cursor: pointer;
-    }
-
-    /* Мобільні пристрої */
-    @media (max-width: 768px) {
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        padding-bottom: 2rem;
-      }
-      img:first-child {
-        max-height: 9.38rem; /* 150px */
-      }
-      .greeting {
-        position: static;
-        font-size: 1.25rem; /* 20px */
-        margin: 0.625rem auto;
-        text-align: center;
-      }
-      .profile-image {
-        position: static;
-        width: 1.88rem; /* 30px */
-        height: 1.88rem;
-        margin: 0.625rem auto;
-      }
-      .credit-button, .used-button, .available-button {
-        position: static;
-        width: 90%;
-        max-width: 18.75rem; /* 300px */
-        height: 3.75rem; /* 60px */
-        font-size: 0.94rem; /* 15px */
-        margin: 0.625rem auto;
-      }
-      .credit-amount, .used-amount {
-        margin-left: 0.63rem;
-      }
-      .available-amount {
-        margin-left: 0.31rem;
-      }
-      .button-group {
-        position: static;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.31rem;
-      }
-      .new-button, .deposit-image-button, .millpay-button, .message-button {
-        width: 3.75rem; /* 60px */
-        height: 3.75rem;
-        font-size: 0.69rem; /* 11px */
-      }
-      .new-button img, .deposit-image-button img, .millpay-button img, .message-button img {
-        width: 1.25rem; /* 20px */
-        height: 1.25rem;
-      }
-      .white-block, .new-block, .new-block-empty, .new-block-lower, .new-empty-block {
-        position: static;
-        width: 90%;
-        max-width: 18.75rem;
-        margin: 0.625rem auto;
-      }
-      .white-block {
-        height: auto;
-        min-height: 21.88rem; /* 350px */
-        padding: 0.75rem;
-      }
-      .new-block, .new-block-empty, .new-empty-block {
-        height: auto;
-        min-height: 7.5rem; /* 120px */
-        padding: 0.75rem;
-      }
-      .new-block-lower {
-        height: auto;
-        min-height: 15.63rem; /* 250px */
-        padding: 0.75rem;
-      }
-      .white-block span, .new-block-empty span, .new-block-lower span, .new-empty-block span {
-        font-size: 0.875rem; /* 14px */
-      }
-      .new-block .mlog-image {
-        width: 25%;
-        height: 25%;
-      }
-      .new-block .miloc-image, .new-block .milph-image, .new-block .milmas-image, .new-block .mili-image {
-        width: 1rem; /* 16px */
-        height: 1rem;
-      }
-      .new-block .locations-text, .new-block .call-text, .new-block .message-text, .new-block .info-text {
-        font-size: 0.625rem; /* 10px */
-      }
-      .new-block-empty .processing-button, .new-block-empty .accepted-button {
-        width: 7.5rem; /* 120px */
-        height: 2rem; /* 32px */
-        font-size: 0.81rem; /* 13px */
-      }
-      .new-block-empty .pay-installment {
-        font-size: 0.875rem;
-      }
-      .new-block-empty .milc-image {
-        width: 1.25rem; /* 20px */
-        height: 1.25rem;
-      }
-      .new-block-lower .message-item img {
-        width: 1.25rem;
-        height: 1.25rem;
-      }
-      .new-block-lower .message-title {
-        font-size: 0.875rem;
-      }
-      .new-block-lower .message-date {
-        font-size: 0.75rem;
-      }
-      .new-block-lower .message-text {
-        font-size: 0.75rem;
-        margin-left: 1.88rem; /* 30px */
-      }
-      .new-empty-block .milp-image, .new-empty-block .miltime-image {
-        width: 2rem; /* 32px */
-        height: 2rem;
-      }
-      .new-empty-block .make-payment, .new-empty-block .your-town-utilities {
-        font-size: 0.875rem;
-      }
-      .new-empty-block .amount-due {
-        font-size: 0.75rem;
-      }
-      .white-block .transaction {
-        font-size: 0.875rem;
-      }
-      .white-block .transaction-item, .white-block .date {
-        font-size: 0.75rem;
-      }
-    }
-
-    /* Планшети */
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .greeting {
-        left: 3.13rem; /* 50px */
-        font-size: 1.5rem; /* 24px */
-      }
-      .profile-image {
-        right: 3.13rem;
-        width: 2.19rem; /* 35px */
-        height: 2.19rem;
-      }
-      .credit-button, .used-button, .available-button {
-        width: 20rem; /* 320px */
-        height: 4.06rem; /* 65px */
-        font-size: 1.13rem; /* 18px */
-      }
-      .credit-button {
-        left: 3.13rem;
-        top: 8.75rem; /* 140px */
-      }
-      .used-button {
-        left: 23.75rem; /* 380px */
-        top: 8.75rem;
-      }
-      .available-button {
-        left: 44.38rem; /* 710px */
-        top: 8.75rem;
-      }
-      .button-group {
-        left: 3.13rem;
-        top: 13.75rem; /* 220px */
-      }
-      .new-button, .deposit-image-button, .millpay-button, .message-button {
-        width: 4.06rem; /* 65px */
-        height: 4.06rem;
-        font-size: 0.81rem; /* 13px */
-      }
-      .new-button img, .deposit-image-button img, .millpay-button img, .message-button img {
-        width: 1.75rem; /* 28px */
-        height: 1.75rem;
-      }
-      .white-block, .new-block, .new-block-empty, .new-block-lower, .new-empty-block {
-        width: 21.88rem; /* 350px */
-      }
-      .white-block {
-        left: 3.13rem;
-        top: 20rem; /* 320px */
-        height: 25rem; /* 400px */
-        padding: 0.75rem;
-      }
-      .new-block {
-        left: 25.63rem; /* 410px */
-        top: 20rem;
-        height: 8.13rem; /* 130px */
-        padding: 0.75rem;
-      }
-      .new-block-empty {
-        left: 25.63rem;
-        top: 28.75rem; /* 460px */
-        height: 8.13rem;
-        padding: 0.75rem;
-      }
-      .new-block-lower {
-        left: 25.63rem;
-        top: 37.5rem; /* 600px */
-        height: 17.5rem; /* 280px */
-        padding: 0.75rem;
-      }
-      .new-empty-block {
-        left: 3.13rem;
-        top: 46.88rem; /* 750px */
-        height: 8.13rem;
-        padding: 0.75rem;
-      }
-      .new-block .mlog-image {
-        width: 28%;
-        height: 28%;
-      }
-      .new-block .miloc-image, .new-block .milph-image, .new-block .milmas-image, .new-block .mili-image {
-        width: 1.13rem; /* 18px */
-        height: 1.13rem;
-      }
-      .new-block .locations-text, .new-block .call-text, .new-block .message-text, .new-block .info-text {
-        font-size: 0.69rem; /* 11px */
-      }
-      .new-block-empty .processing-button, .new-block-empty .accepted-button {
-        width: 8.75rem; /* 140px */
-        height: 2.38rem; /* 38px */
-        font-size: 0.94rem; /* 15px */
-      }
-      .new-block-empty .pay-installment {
-        font-size: 1rem;
-      }
-      .new-block-empty .milc-image {
-        width: 1.38rem; /* 22px */
-        height: 1.38rem;
-      }
-      .new-block-lower .message-item img {
-        width: 1.38rem;
-        height: 1.38rem;
-      }
-      .new-block-lower .message-title {
-        font-size: 0.94rem;
-      }
-      .new-block-lower .message-date {
-        font-size: 0.81rem;
-      }
-      .new-block-lower .message-text {
-        font-size: 0.81rem;
-      }
-      .new-empty-block .milp-image, .new-empty-block .miltime-image {
-        width: 2.75rem; /* 44px */
-        height: 2.75rem;
-      }
-      .new-empty-block .make-payment, .new-empty-block .your-town-utilities {
-        font-size: 0.94rem;
-      }
-      .new-empty-block .amount-due {
-        font-size: 0.81rem;
-      }
-      .white-block .transaction {
-        font-size: 1rem;
-      }
-      .white-block .transaction-item, .white-block .date {
-        font-size: 0.81rem;
-      }
     }
   </style>
 </head>
@@ -739,119 +828,83 @@
       <span class="available-amount">$5,986.21</span>
     </div>
   </div>
-  <div class="button-group">
-    <div class="new-button">
-      <img src="images/milltrf.jpg" alt="Milltrf image">
-      <span>Transfer</span>
-    </div>
-    <div class="deposit-image-button">
-      <img src="images/milldep.jpg" alt="Milldep image">
-      <span>Deposit</span>
-    </div>
-    <div class="millpay-button">
-      <img src="images/milp2.jpg" alt="Milp2 image">
-      <span>Pay</span>
-    </div>
-    <div class="message-button">
-      <img src="images/milmas2.jpg" alt="Milmas2 image">
-      <span>Message</span>
-    </div>
+  <div class="new-button">
+    <img src="images/milltrf.jpg" alt="Milltrf image">
+    <span>Transfer</span>
+  </div>
+  <div class="deposit-image-button">
+    <img src="images/milldep.jpg" alt="Milldep image">
+    <span>Deposit</span>
+  </div>
+  <div class="millpay-button">
+    <img src="images/milp2.jpg" alt="Milp2 image">
+    <span>Pay</span>
+  </div>
+  <div class="message-button">
+    <img src="images/milmas2.jpg" alt="Milmas2 image">
+    <span>Message</span>
   </div>
   <div class="white-block">
     <span class="transaction">Transactions</span>
-    <div class="transaction-item" data-before="Galleria Town Cinema" data-after="$14.89"></div>
-    <div class="date">Sep 7</div>
-    <div class="transaction-item" data-before="Georges BBQ & PUB" data-after="$57.42"></div>
-    <div class="date">Sep 3</div>
-    <div class="transaction-item" data-before="Mike's Barbershop" data-after="$25.61"></div>
-    <div class="date">Sep 3</div>
-    <div class="transaction-item" data-before="Valero Gas Station" data-after="$64.41"></div>
-    <div class="date">Sep 2</div>
-    <div class="transaction-item" data-before="LE PETITE CAFE" data-after="$13.98"></div>
-    <div class="date">Sep 2</div>
-    <div class="transaction-item" data-before="Uber Eats" data-after="$60.01"></div>
-    <div class="date">Aug 30</div>
-    <div class="see-more">See more</div>
+    <span class="details transaction-item"></span>
+    <span class="date">Sep 7</span>
+    <span class="details-second transaction-item"></span>
+    <span class="date-second">Sep 3</span>
+    <span class="details-third transaction-item"></span>
+    <span class="date-third">Sep 3</span>
+    <span class="details-fourth transaction-item"></span>
+    <span class="date-fourth">Sep 2</span>
+    <span class="details-fifth transaction-item"></span>
+    <span class="date-fifth">Sep 2</span>
+    <span class="details-sixth transaction-item"></span>
+    <span class="date-sixth">Aug 30</span>
+    <span class="see-more">See more</span>
   </div>
   <div class="new-block">
     <img src="images/mlog.jpg" alt="Mlog Image" class="mlog-image">
-    <div class="icon-row">
-      <div class="icon-group">
-        <img src="images/miloc.jpg" alt="Miloc Image" class="miloc-image">
-        <span class="locations-text">Locations</span>
-      </div>
-      <div class="icon-group">
-        <img src="images/milph.jpg" alt="Milph Image" class="milph-image">
-        <span class="call-text">Call</span>
-      </div>
-      <div class="icon-group">
-        <img src="images/milmas.jpg" alt="Milmas Image" class="milmas-image">
-        <span class="message-text">Message</span>
-      </div>
-      <div class="icon-group">
-        <img src="images/mili.jpg" alt="Mili Image" class="mili-image">
-        <span class="info-text">Info</span>
-      </div>
-    </div>
+    <img src="images/miloc.jpg" alt="Miloc Image" class="miloc-image">
+    <img src="images/milph.jpg" alt="Milph Image" class="milph-image">
+    <img src="images/milmas.jpg" alt="Milmas Image" class="milmas-image">
+    <img src="images/mili.jpg" alt="Mili Image" class="mili-image">
+    <span class="call-text">Call</span>
+    <span class="locations-text">Locations</span>
+    <span class="message-text">Message</span>
+    <span class="info-text">Info</span>
   </div>
   <div class="new-block-empty">
     <span class="credit-checks">Credit checks</span>
-    <div class="button-group">
-      <div class="processing-button">0 Processing</div>
-      <div class="accepted-button">4 Accepted</div>
-    </div>
-    <div class="pay-row">
-      <img src="images/milc.jpg" alt="Milc Image" class="milc-image">
-      <span class="pay-installment">Pay installment</span>
-    </div>
+    <div class="processing-button">0 Processing</div>
+    <div class="accepted-button">4 Accepted</div>
+    <img src="images/milc.jpg" alt="Milc Image" class="milc-image">
+    <span class="pay-installment">Pay installment</span>
   </div>
   <div class="new-block-lower">
     <span class="messages">Messages</span>
-    <div class="message-item">
-      <div class="message-title">
-        <img src="images/millist.jpg" alt="Millist Image" class="millist-image">
-        <span>Holiday Hours</span>
-        <span class="message-date">Sep 3</span>
-      </div>
-      <span class="message-text">Our brunch will be organized on Monday</span>
-    </div>
-    <div class="message-item">
-      <div class="message-title">
-        <img src="images/milat.jpg" alt="Milat Image" class="milat-image">
-        <span>Low Funds: Checking</span>
-        <span class="message-date">Sep 3</span>
-      </div>
-      <span class="message-text">Check the status of your savings account</span>
-    </div>
-    <div class="message-item">
-      <div class="message-title">
-        <img src="images/miljef.jpeg" alt="Miljef Image" class="miljef-image">
-        <span>Jennifer</span>
-        <span class="message-date">Sep 1</span>
-      </div>
-      <span class="message-text">No problem, we will send you a copy of the contract</span>
-    </div>
-    <div class="message-item">
-      <div class="message-title">
-        <img src="images/millis.jpg" alt="Millis Image" class="millis-image">
-        <span>Home Improvement</span>
-        <span class="message-date">Sep 1</span>
-      </div>
-      <span class="message-text">Find out how you can get started</span>
-    </div>
+    <img src="images/millist.jpg" alt="Millist Image" class="millist-image">
+    <span class="holiday-hours">Holiday Hours</span>
+    <span class="holiday-date">Sep 3</span>
+    <span class="brunch-text">Our brunch will be organized on Monday</span>
+    <img src="images/milat.jpg" alt="Milat Image" class="milat-image">
+    <span class="low-funds">Low Funds: Checking</span>
+    <span class="low-funds-date">Sep 3</span>
+    <span class="savings-status">Check the status of your savings account</span>
+    <img src="images/miljef.jpeg" alt="Miljef Image" class="miljef-image">
+    <span class="jennifer-text">Jennifer</span>
+    <span class="jennifer-date">Sep 1</span>
+    <span class="contract-text">No problem, we will send you a copy of the contract</span>
+    <img src="images/millis.jpg" alt="Millis Image" class="millis-image">
+    <span class="home-improvement-text">Home Improvement</span>
+    <span class="home-improvement-date">Sep 1</span>
+    <span class="get-started-text">Find out how you can get started</span>
     <span class="see-more">See more</span>
   </div>
   <div class="new-empty-block">
     <span class="payments">Payments</span>
-    <div class="payment-item">
-      <img src="images/milp.jpg" alt="Milp Image" class="milp-image">
-      <span class="make-payment" onclick="makePayment()">Make a payment</span>
-    </div>
-    <div class="payment-item">
-      <img src="images/miltime.jpg" alt="Miltime Image" class="miltime-image">
-      <span class="your-town-utilities" onclick="yourTownUtilities()">Your Town Utilities</span>
-      <span class="amount-due">$291,00</span>
-    </div>
+    <img src="images/milp.jpg" alt="Milp Image" class="milp-image">
+    <span class="make-payment" onclick="makePayment()">Make a payment</span>
+    <img src="images/miltime.jpg" alt="Miltime Image" class="miltime-image">
+    <span class="your-town-utilities" onclick="yourTownUtilities()">Your Town Utilities</span>
+    <span class="amount-due">$291,00</span>
   </div>
   <script>
     function makePayment() {

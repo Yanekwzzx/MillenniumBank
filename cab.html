@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cabinet</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&display=swap">
   <style>
     body {
       margin: 0;
       height: 100vh;
       background-color: #f0f0f0;
+      font-family: 'Source Sans 3', sans-serif;
+      overflow-x: hidden;
     }
 
     img {
@@ -225,43 +228,30 @@
       margin-top: -19px;
     }
 
-    .new-block .miloc-image {
+    .new-block .miloc-image, .new-block .milph-image, .new-block .milmas-image, .new-block .mili-image {
       width: 20px;
       height: 20px;
       object-fit: contain;
       border-radius: 8px;
       display: block;
+    }
+
+    .new-block .miloc-image {
       margin-left: 113.6px;
-      margin-right: auto;
       margin-top: 10px;
     }
 
     .new-block .milph-image {
-      width: 20px;
-      height: 20px;
-      object-fit: contain;
-      border-radius: 8px;
-      display: block;
       margin-left: -10.8px;
       margin-top: -20px;
     }
 
     .new-block .milmas-image {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-      border-radius: 8px;
-      display: block;
       margin-left: 132.6px;
       margin-top: -20px;
     }
 
     .new-block .mili-image {
-      width: 30px;
-      height: 30px;
-      object-fit: contain;
-      border-radius: 8px;
-      display: block;
       margin-left: 280px;
       margin-top: -28px;
     }
@@ -798,11 +788,441 @@
       margin-right: 24px;
     }
 
-    /* Додано стилі для підкреслення транзакцій при наведенні */
     .white-block .transaction-item:hover::before,
     .white-block .transaction-item:hover::after {
       text-decoration: underline;
       cursor: pointer;
+    }
+
+    /* Мобільні пристрої */
+    @media (max-width: 768px) {
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding-bottom: 20px;
+      }
+      img:first-child {
+        max-height: 150px;
+      }
+      .greeting {
+        position: static;
+        font-size: 20px;
+        margin: 10px auto;
+        text-align: center;
+      }
+      .profile-image {
+        position: static;
+        width: 30px;
+        height: 30px;
+        margin: 10px auto;
+      }
+      .credit-button, .used-button, .available-button {
+        position: static;
+        width: 90%;
+        max-width: 300px;
+        height: 60px;
+        font-size: 16px;
+        margin: 10px auto;
+      }
+      .credit-amount, .used-amount {
+        margin-left: 50px;
+      }
+      .available-amount {
+        margin-left: 30px;
+      }
+      .new-button, .deposit-image-button, .millpay-button, .message-button {
+        position: static;
+        width: 60px;
+        height: 60px;
+        font-size: 12px;
+        margin: 5px;
+      }
+      .new-button img, .deposit-image-button img, .millpay-button img, .message-button img {
+        width: 25px;
+        height: 25px;
+      }
+      .white-block, .new-block, .new-block-empty, .new-block-lower, .new-empty-block {
+        position: static;
+        width: 90%;
+        max-width: 300px;
+        margin: 10px auto;
+      }
+      .white-block {
+        height: 350px;
+      }
+      .new-block, .new-block-empty, .new-empty-block {
+        height: 120px;
+      }
+      .new-block-lower {
+        height: 250px;
+      }
+      .white-block span, .new-block-empty span, .new-block-lower span, .new-empty-block span {
+        font-size: 14px;
+      }
+      .new-block .mlog-image {
+        width: 25%;
+        height: 25%;
+        margin-top: -15px;
+      }
+      .new-block .miloc-image, .new-block .milph-image, .new-block .milmas-image, .new-block .mili-image {
+        width: 18px;
+        height: 18px;
+      }
+      .new-block .miloc-image {
+        margin-left: 50px;
+        margin-top: 5px;
+      }
+      .new-block .milph-image {
+        margin-left: -5px;
+        margin-top: -15px;
+      }
+      .new-block .milmas-image {
+        margin-left: 60px;
+        margin-top: -15px;
+      }
+      .new-block .mili-image {
+        margin-left: 120px;
+        margin-top: -20px;
+      }
+      .new-block .locations-text, .new-block .call-text, .new-block .message-text, .new-block .info-text {
+        font-size: 10px;
+      }
+      .new-block .locations-text {
+        margin-left: -90px;
+        margin-top: -10px;
+      }
+      .new-block .call-text {
+        margin-left: -5px;
+        margin-top: 2px;
+      }
+      .new-block .message-text {
+        margin-left: 60px;
+        margin-top: -10px;
+      }
+      .new-block .info-text {
+        margin-left: 120px;
+        margin-top: -10px;
+      }
+      .new-block-empty .processing-button, .new-block-empty .accepted-button {
+        width: 120px;
+        height: 35px;
+        font-size: 14px;
+        top: 30px;
+      }
+      .new-block-empty .processing-button {
+        left: 10px;
+      }
+      .new-block-empty .accepted-button {
+        left: 140px;
+      }
+      .new-block-empty .pay-installment {
+        top: 80px;
+        left: 90px;
+        font-size: 14px;
+      }
+      .new-block-empty .milc-image {
+        top: 78px;
+        left: 60px;
+        width: 20px;
+        height: 20px;
+      }
+      .new-block-lower .millist-image, .new-block-lower .milat-image, .new-block-lower .miljef-image, .new-block-lower .millis-image {
+        width: 20px;
+        height: 20px;
+      }
+      .new-block-lower .millist-image {
+        top: 45px;
+      }
+      .new-block-lower .milat-image {
+        top: 90px;
+      }
+      .new-block-lower .miljef-image {
+        top: 135px;
+      }
+      .new-block-lower .millis-image {
+        top: 180px;
+      }
+      .new-block-lower .holiday-hours, .new-block-lower .low-funds, .new-block-lower .jennifer-text, .new-block-lower .home-improvement-text {
+        font-size: 14px;
+        left: 35px;
+      }
+      .new-block-lower .holiday-hours {
+        top: 48px;
+      }
+      .new-block-lower .holiday-date {
+        top: 48px;
+        left: 260px;
+        font-size: 12px;
+      }
+      .new-block-lower .brunch-text {
+        top: 65px;
+        font-size: 12px;
+        width: calc(100% - 50px);
+        padding-left: 30px;
+      }
+      .new-block-lower .low-funds {
+        top: 95px;
+      }
+      .new-block-lower .low-funds-date {
+        top: 95px;
+        left: 260px;
+        font-size: 12px;
+      }
+      .new-block-lower .savings-status {
+        top: 110px;
+        font-size: 12px;
+        width: calc(100% - 50px);
+        padding-left: 30px;
+      }
+      .new-block-lower .jennifer-text {
+        top: 140px;
+      }
+      .new-block-lower .jennifer-date {
+        top: 140px;
+        left: 260px;
+        font-size: 12px;
+      }
+      .new-block-lower .contract-text {
+        top: 155px;
+        font-size: 12px;
+        width: calc(100% - 50px);
+        padding-left: 30px;
+      }
+      .new-block-lower .home-improvement-text {
+        top: 185px;
+      }
+      .new-block-lower .home-improvement-date {
+        top: 185px;
+        left: 260px;
+        font-size: 12px;
+      }
+      .new-block-lower .get-started-text {
+        top: 200px;
+        font-size: 12px;
+        width: calc(100% - 50px);
+        padding-left: 30px;
+      }
+      .new-block-lower .see-more {
+        font-size: 14px;
+      }
+      .new-empty-block .milp-image, .new-empty-block .miltime-image {
+        width: 40px;
+        height: 40px;
+      }
+      .new-empty-block .milp-image {
+        top: 30px;
+      }
+      .new-empty-block .miltime-image {
+        top: 80px;
+      }
+      .new-empty-block .make-payment {
+        top: 35px;
+        left: 60px;
+        font-size: 14px;
+      }
+      .new-empty-block .your-town-utilities {
+        top: 85px;
+        left: 60px;
+        font-size: 13px;
+      }
+      .new-empty-block .amount-due {
+        top: 85px;
+        left: 200px;
+        font-size: 12px;
+      }
+      .white-block .transaction {
+        font-size: 14px;
+      }
+      .white-block .details, .white-block .details-second, .white-block .details-third,
+      .white-block .details-fourth, .white-block .details-fifth, .white-block .details-sixth {
+        font-size: 12px;
+      }
+      .white-block .details {
+        top: 50px;
+      }
+      .white-block .date {
+        top: 70px;
+        font-size: 12px;
+      }
+      .white-block .details-second {
+        top: 90px;
+      }
+      .white-block .date-second {
+        top: 110px;
+        font-size: 12px;
+      }
+      .white-block .details-third {
+        top: 130px;
+      }
+      .white-block .date-third {
+        top: 150px;
+        font-size: 12px;
+      }
+      .white-block .details-fourth {
+        top: 170px;
+      }
+      .white-block .date-fourth {
+        top: 190px;
+        font-size: 12px;
+      }
+      .white-block .details-fifth {
+        top: 210px;
+      }
+      .white-block .date-fifth {
+        top: 230px;
+        font-size: 12px;
+      }
+      .white-block .details-sixth {
+        top: 250px;
+      }
+      .white-block .date-sixth {
+        top: 270px;
+        font-size: 12px;
+      }
+      .white-block .see-more {
+        font-size: 14px;
+      }
+    }
+
+    /* Планшети */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .greeting {
+        left: 50px;
+        font-size: 24px;
+      }
+      .profile-image {
+        left: 650px;
+        width: 35px;
+        height: 35px;
+      }
+      .credit-button, .used-button, .available-button {
+        width: 320px;
+        height: 65px;
+        font-size: 18px;
+      }
+      .credit-button {
+        left: 50px;
+        top: 140px;
+      }
+      .used-button {
+        left: 380px;
+        top: 140px;
+      }
+      .available-button {
+        left: 710px;
+        top: 140px;
+      }
+      .new-button, .deposit-image-button, .millpay-button, .message-button {
+        width: 65px;
+        height: 65px;
+        font-size: 13px;
+      }
+      .new-button img, .deposit-image-button img, .millpay-button img, .message-button img {
+        width: 28px;
+        height: 28px;
+      }
+      .new-button {
+        left: 50px;
+        top: 220px;
+      }
+      .deposit-image-button {
+        left: 125px;
+        top: 220px;
+      }
+      .millpay-button {
+        left: 200px;
+        top: 220px;
+      }
+      .message-button {
+        left: 275px;
+        top: 220px;
+      }
+      .white-block, .new-block, .new-block-empty, .new-block-lower, .new-empty-block {
+        width: 350px;
+      }
+      .white-block {
+        left: 50px;
+        height: 400px;
+      }
+      .new-block {
+        left: 410px;
+        top: 320px;
+        height: 130px;
+      }
+      .new-block-empty {
+        left: 410px;
+        top: 460px;
+        height: 130px;
+      }
+      .new-block-lower {
+        left: 410px;
+        top: 600px;
+        height: 280px;
+      }
+      .new-empty-block {
+        left: 50px;
+        top: 750px;
+        height: 130px;
+      }
+      .white-block span, .new-block-empty span, .new-block-lower span, .new-empty-block span {
+        font-size: 16px;
+      }
+      .new-block .mlog-image {
+        width: 28%;
+        height: 28%;
+      }
+      .new-block .miloc-image, .new-block .milph-image, .new-block .milmas-image, .new-block .mili-image {
+        width: 18px;
+        height: 18px;
+      }
+      .new-block .locations-text, .new-block .call-text, .new-block .message-text, .new-block .info-text {
+        font-size: 11px;
+      }
+      .new-block-empty .processing-button, .new-block-empty .accepted-button {
+        width: 140px;
+        height: 38px;
+        font-size: 15px;
+      }
+      .new-block-empty .pay-installment {
+        font-size: 16px;
+      }
+      .new-block-empty .milc-image {
+        width: 22px;
+        height: 22px;
+      }
+      .new-block-lower .millist-image, .new-block-lower .milat-image, .new-block-lower .miljef-image, .new-block-lower .millis-image {
+        width: 22px;
+        height: 22px;
+      }
+      .new-empty-block .milp-image, .new-empty-block .miltime-image {
+        width: 44px;
+        height: 44px;
+      }
+      .new-empty-block .make-payment, .new-empty-block .your-town-utilities {
+        font-size: 15px;
+      }
+      .new-empty-block .amount-due {
+        font-size: 13px;
+      }
+      .new-block-lower .holiday-hours, .new-block-lower .low-funds, .new-block-lower .jennifer-text, .new-block-lower .home-improvement-text {
+        font-size: 15px;
+      }
+      .new-block-lower .holiday-date, .new-block-lower .low-funds-date, .new-block-lower .jennifer-date, .new-block-lower .home-improvement-date {
+        font-size: 13px;
+      }
+      .new-block-lower .brunch-text, .new-block-lower .savings-status, .new-block-lower .contract-text, .new-block-lower .get-started-text {
+        font-size: 13px;
+      }
+      .white-block .details, .white-block .details-second, .white-block .details-third,
+      .white-block .details-fourth, .white-block .details-fifth, .white-block .details-sixth {
+        font-size: 13px;
+      }
+      .white-block .date, .white-block .date-second, .white-block .date-third,
+      .white-block .date-fourth, .white-block .date-fifth, .white-block .date-sixth {
+        font-size: 13px;
+      }
     }
   </style>
 </head>

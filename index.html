@@ -17,11 +17,11 @@
       font-family: 'Source Sans 3', sans-serif;
       background-color: #f8f9fa;
       margin: 0;
-      overflow-x: hidden; /* Прибираємо горизонтальний повзунок */
+      overflow-x: hidden;
     }
 
     img {
-      max-width: 100%; /* Запобігаємо переповненню зображень */
+      max-width: 100%;
       height: auto;
     }
 
@@ -251,7 +251,7 @@
       flex-direction: row;
       margin-top: 234.46px;
       width: 100%;
-      max-width: 1864px; /* Оригінал: 932px + 932px */
+      max-width: 1864px;
       margin-left: auto;
       margin-right: auto;
       flex-wrap: wrap;
@@ -259,7 +259,7 @@
 
     .liveeasily-block {
       background-color: #0f525f;
-      width: 50%; /* Оригінал: 932px */
+      width: 50%;
       max-width: 932px;
       height: 568px;
       display: flex;
@@ -274,7 +274,7 @@
 
     .millfamily-img {
       display: block;
-      width: 50%; /* Оригінал: 932px */
+      width: 50%;
       max-width: 932px;
       height: auto;
     }
@@ -283,14 +283,14 @@
     .three-sections {
       display: flex;
       width: 100%;
-      max-width: 1496px; /* Оригінал: 1496px */
+      max-width: 1496px;
       height: 507.6px;
       margin: 0 auto;
       flex-wrap: wrap;
     }
 
     .section {
-      width: 33.33%; /* Оригінал: 498.66px */
+      width: 33.33%;
       max-width: 498.66px;
       height: 507.6px;
       position: relative;
@@ -769,155 +769,202 @@
     @media (max-width: 768px) {
       /* Мобільні пристрої */
       .header-top {
-        padding-right: 20px; /* Зменшуємо відступ */
+        padding: 5px 10px;
+        padding-right: 10px;
       }
       .header-top .top-row, .header-top .bottom-row, .header-top .description-row {
         flex-direction: column;
         align-items: flex-start;
+        gap: 5px;
       }
       .header-top a {
-        margin: 5px 0;
+        margin: 2px 0;
+        font-size: 14px;
       }
       #fdic-container {
-        position: relative;
-        top: 0;
+        position: static;
+        margin: 234.46px auto 10px;
+        width: 95%;
         left: 0;
-        margin: 10px auto;
-        width: 90%;
       }
       .fdic-text {
         left: 0;
+        font-size: 12px;
+        text-align: center;
+      }
+      .fdic-main {
+        font-size: 18px;
       }
       .logo-container {
         left: 0;
         flex-direction: column;
-        align-items: flex-start;
-        width: 90%;
+        align-items: center;
+        width: 95%;
         margin: 10px auto;
+      }
+      .mill-logo {
+        width: 150px;
       }
       .banking-wrapper {
         flex-direction: column;
         gap: 10px;
         margin-left: 0;
-        align-items: flex-start;
+        align-items: center;
+      }
+      .banking-text {
+        font-size: 18px;
       }
       .login-bar {
         margin-left: 0;
         margin-top: 10px;
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+        height: auto;
+      }
+      .login-part1 {
+        width: 70%;
+      }
+      .login-part2 {
+        width: 30%;
       }
       .images-container {
         flex-direction: column;
+        margin-top: 300px;
       }
       .liveeasily-block, .millfamily-img {
         width: 100%;
         max-width: none;
         height: auto;
+        min-height: 200px;
       }
       .liveeasily-block {
-        height: 300px;
+        height: 250px;
+      }
+      .liveeasily-img {
+        max-width: 90%;
       }
       .three-sections {
         flex-direction: column;
         height: auto;
+        max-width: 95%;
       }
       .section {
         width: 100%;
         max-width: none;
-        height: 300px;
+        height: auto;
+        min-height: 250px;
+        padding: 20px;
       }
       .section.left, .section.center, .section.right {
-        padding-top: 20px;
+        padding-top: 10px;
       }
       .section img {
-        width: 50%;
-        max-width: 100px;
+        width: 40%;
+        max-width: 80px;
       }
       .section .label-text {
-        font-size: 24px;
+        font-size: 22px;
+        margin-top: 10px;
       }
       .section .subtext {
         font-size: 14px;
+        max-width: 90%;
       }
       .section .button {
         width: 80%;
-        max-width: 200px;
+        max-width: 180px;
+        height: 40px;
+        font-size: 14px;
       }
       .banking-onthego-container {
         margin-left: 0;
-        width: 90%;
+        width: 95%;
         margin: 20px auto;
+        align-items: center;
       }
       .banking-onthego {
         left: 0;
-        padding-left: 10px;
+        padding-left: 0;
         font-size: 24px;
+        text-align: center;
       }
       .banking-onthego-subtext {
         left: 0;
-        padding-left: 10px;
+        padding: 0 10px;
         font-size: 14px;
         max-width: 90%;
+        text-align: center;
+        white-space: normal;
       }
       .follow-us-text {
-        position: relative;
-        left: 0;
-        top: 0;
-        padding-left: 10px;
-        margin-top: 10px;
+        position: static;
+        padding: 0 10px;
+        margin: 10px auto;
         font-size: 14px;
         max-width: 90%;
+        text-align: center;
       }
       .banking-onthego-button {
-        left: 0;
-        margin-left: 10px;
+        position: static;
+        margin: 10px auto;
+        width: 130px;
+        height: 45px;
+        font-size: 14px;
       }
       .millphone-img {
-        left: 0;
-        margin-left: 10px;
+        position: static;
+        margin: 10px auto;
+        width: 130px;
       }
       .millvideo {
-        position: relative;
-        left: 0;
-        top: 0;
+        position: static;
         margin: 20px auto;
-        width: 100%;
-        max-width: 350px;
+        width: 95%;
+        max-width: 320px;
       }
       .youtube-button {
-        position: relative;
-        left: 0;
-        top: 0;
+        position: static;
         margin: 20px auto;
-        width: 100%;
-        max-width: 257.18px;
+        width: 95%;
+        max-width: 230px;
+        height: 45px;
+        font-size: 14px;
       }
       .youtube-container {
-        margin-right: 0;
-        left: 0;
-        width: 90%;
         margin: 20px auto;
+        width: 95%;
+        left: 0;
+        justify-content: center;
       }
       .youtube-text {
         font-size: 24px;
-        margin-right: 10px;
+        text-align: center;
+        margin-right: 0;
       }
       .bottom-block {
         height: auto;
-        padding-bottom: 200px;
+        padding-bottom: 250px;
+        margin-top: 100px;
       }
       .millhouse-img, .milljha-img {
         max-width: 90%;
+        bottom: 50px;
+      }
+      .millhouse-img {
+        left: 50%;
+      }
+      .milljha-img {
+        left: 50%;
+        bottom: 20px;
       }
       .about-us-text, .faq-text, .usa-patriot-act-text, .fdic-notice-text,
       .online-security-text, .privacy-policy-text, .terms-of-use-text,
       .contact-text, .locations-text, .cra-public-file-text {
-        position: relative;
-        left: 0;
-        margin: 10px auto;
-        width: 90%;
-        top: 0;
+        position: static;
+        margin: 8px auto;
+        width: 95%;
+        font-size: 16px;
+        text-align: center;
       }
     }
 

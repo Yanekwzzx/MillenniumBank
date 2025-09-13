@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&display=swap">
+  <style>
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .login-container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .login-container h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #085560;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      opacity: 0.9;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .captcha {
+      margin: 20px 0;
+    }
+
+    .guest-mode {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .language-select {
+      margin-top: 20px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Sign in</h1>
+    <p>to continue to Gmail</p>
+    <div class="captcha">
+      CAPTCHA image of text used to distinguish humans from robots
+    </div>
+    <form id="login-form">
+      <input type="text" id="username" placeholder="Enter username" required>
+      <button type="submit">Sign in</button>
+      <div id="error-message" class="error-message">Invalid username. Please try again.</div>
+    </form>
+    <div class="guest-mode">
+      Not your computer? Use Guest mode to sign in privately. 
+      <a href="#">Learn more about using Guest mode</a>
+    </div>
+    <select class="language-select">
+      <option value="af">Afrikaans</option>
+      <option value="az">azərbaycan</option>
+      <option value="bs">bosanski</option>
+      <option value="ca">català</option>
+      <option value="cs">Čeština</option>
+      <option value="cy">Cymraeg</option>
+      <option value="da">Dansk</option>
+      <option value="de">Deutsch</option>
+      <option value="et">eesti</option>
+      <option value="en-GB">English (United Kingdom)</option>
+      <option value="en-US" selected>English (United States)</option>
+      <option value="es-ES">Español (España)</option>
+      <option value="es-LA">Español (Latinoamérica)</option>
+      <option value="eu">euskara</option>
+      <option value="fil">Filipino</option>
+      <option value="fr-CA">Français (Canada)</option>
+      <option value="fr-FR">Français (France)</option>
+      <option value="ga">Gaeilge</option>
+      <option value="gl">galego</option>
+      <option value="hr">Hrvatski</option>
+      <option value="id">Indonesia</option>
+      <option value="zu">isiZulu</option>
+      <option value="is">íslenska</option>
+      <option value="it">Italiano</option>
+      <option value="sw">Kiswahili</option>
+      <option value="lv">latviešu</option>
+      <option value="lt">lietuvių</option>
+      <option value="hu">magyar</option>
+      <option value="ms">Melayu</option>
+      <option value="nl">Nederlands</option>
+      <option value="no">norsk</option>
+      <option value="uz">o‘zbek</option>
+      <option value="pl">polski</option>
+      <option value="pt-BR">Português (Brasil)</option>
+      <option value="pt-PT">Português (Portugal)</option>
+      <option value="ro">română</option>
+      <option value="sq">shqip</option>
+      <option value="sk">Slovenčina</option>
+      <option value="sl">slovenščina</option>
+      <option value="sr-Latn">srpski (latinica)</option>
+      <option value="fi">Suomi</option>
+      <option value="sv">Svenska</option>
+      <option value="vi">Tiếng Việt</option>
+      <option value="tr">Türkçe</option>
+      <option value="el">Ελληνικά</option>
+      <option value="be">беларуская</option>
+      <option value="bg">български</option>
+      <option value="ky">кыргызча</option>
+      <option value="kk">қазақ тілі</option>
+      <option value="mk">македонски</option>
+      <option value="mn">монгол</option>
+      <option value="ru">Русский</option>
+      <option value="sr-Cyrl">српски (ћирилица)</option>
+      <option value="uk">Українська</option>
+      <option value="ka">ქართული</option>
+      <option value="hy">հայերեն</option>
+      <option value="he">‫עברית‬‎</option>
+      <option value="ur">‫اردو‬‎</option>
+      <option value="ar">‫العربية‬‎</option>
+      <option value="fa">‫فارسی‬‎</option>
+      <option value="am">አማርኛ</option>
+      <option value="ne">नेपाली</option>
+      <option value="mr">मराठी</option>
+      <option value="hi">हिन्दी</option>
+      <option value="as">অসমীয়া</option>
+      <option value="bn">বাংলা</option>
+      <option value="pa">ਪੰਜਾਬੀ</option>
+      <option value="gu">ગુજરાતી</option>
+      <option value="or">ଓଡ଼ିଆ</option>
+      <option value="ta">தமிழ்</option>
+      <option value="te">తెలుగు</option>
+      <option value="kn">ಕನ್ನಡ</option>
+      <option value="ml">മലയാളം</option>
+      <option value="si">සිංහල</option>
+      <option value="th">ไทย</option>
+      <option value="lo">ລາວ</option>
+      <option value="my">မြန်မာ</option>
+      <option value="km">ខ្មែរ</option>
+      <option value="ko">한국어</option>
+      <option value="zh-HK">中文（香港）</option>
+      <option value="ja">日本語</option>
+      <option value="zh-CN">简体中文</option>
+      <option value="zh-TW">繁體中文</option>
+    </select>
+  </div>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const errorMessage = document.getElementById('error-message');
+
+      if (username === 'jawiermuller@gmail.com') {
+        window.location.href = 'next.html';
+      } else {
+        errorMessage.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -6,6 +6,10 @@
   <title>Cabinet</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&display=swap">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       height: 100vh;
@@ -18,22 +22,23 @@
       width: 100%;
       height: auto;
       display: block;
+      object-fit: cover;
     }
 
     .greeting {
       position: absolute;
-      top: 87px;
-      left: 188px;
-      font-size: 30px;
+      top: 5.44rem; /* 87px */
+      left: 11.75rem; /* 188px */
+      font-size: 1.875rem; /* 30px */
       color: white;
     }
 
     .profile-image {
       position: absolute;
-      top: 87px;
-      left: 1206.3px;
-      width: 40px;
-      height: 40px;
+      top: 5.44rem; /* 87px */
+      left: 75.39rem; /* 1206.3px */
+      width: 2.5rem; /* 40px */
+      height: 2.5rem;
       object-fit: cover;
       border-radius: 50%;
       cursor: pointer;
@@ -41,47 +46,47 @@
     }
 
     .profile-image:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-0.125rem);
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
     }
 
     .credit-button, .used-button, .available-button, .processing-button, .accepted-button {
       position: absolute;
-      width: 339px;
-      height: 75px;
+      width: 21.19rem; /* 339px */
+      height: 4.69rem; /* 75px */
       background-color: #085660;
       color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
-      border-radius: 8px;
-      margin-top: -5px;
+      font-size: 1.25rem; /* 20px */
+      border-radius: 0.5rem;
+      margin-top: -0.31rem;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .credit-button {
-      left: 188px;
-      top: 153px;
+      left: 11.75rem;
+      top: 9.56rem; /* 153px */
     }
 
     .used-button {
-      left: 547px;
-      top: 153px;
+      left: 34.19rem; /* 547px */
+      top: 9.56rem;
     }
 
     .available-button {
-      left: 906px;
-      top: 153px;
+      left: 56.63rem; /* 906px */
+      top: 9.56rem;
     }
 
     .new-button, .deposit-image-button, .millpay-button, .message-button {
-      width: 75px;
-      height: 75px;
-      font-size: 14px;
+      width: 4.69rem; /* 75px */
+      height: 4.69rem;
+      font-size: 0.875rem; /* 14px */
       flex-direction: column;
-      gap: 2px;
+      gap: 0.125rem;
       position: absolute;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -89,94 +94,95 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 8px;
+      border-radius: 0.5rem;
     }
 
     .new-button {
-      left: 188px;
-      top: 238px;
+      left: 11.75rem;
+      top: 14.88rem; /* 238px */
     }
 
     .deposit-image-button {
-      left: 273px;
-      top: 238px;
+      left: 17.06rem; /* 273px */
+      top: 14.88rem;
     }
 
     .millpay-button {
-      left: 358px;
-      top: 238px;
+      left: 22.38rem; /* 358px */
+      top: 14.88rem;
     }
 
     .message-button {
-      left: 443px;
-      top: 238px;
+      left: 27.69rem; /* 443px */
+      top: 14.88rem;
     }
 
     .new-button img, .deposit-image-button img, .millpay-button img, .message-button img {
-      width: 30px;
-      height: 30px;
-      margin-top: 5px;
+      width: 1.88rem; /* 30px */
+      height: 1.88rem;
+      margin-top: 0.31rem;
     }
 
     .new-button span, .deposit-image-button span, .millpay-button span, .message-button span {
-      font-size: 14px;
+      font-size: 0.875rem;
       color: white;
       text-align: center;
     }
 
     .new-button:hover, .deposit-image-button:hover, .millpay-button:hover, .message-button:hover {
       background-color: #003d54;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-0.125rem);
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
     }
 
     .credit-button:hover, .used-button:hover, .available-button:hover, .processing-button:hover {
       background-color: #064750;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-0.125rem);
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
     }
 
     .accepted-button:hover {
       background-color: #6B6B6B;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-0.125rem);
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
     }
 
     .white-block {
       position: absolute;
-      width: 454px;
-      height: 454px;
+      width: 28.38rem; /* 454px */
+      height: 28.38rem;
       background-color: white;
-      left: 188px;
-      top: 0px;
-      border-radius: 8px;
+      left: 11.75rem;
+      top: 0;
+      border-radius: 0.5rem;
       position: relative;
     }
 
     .new-block {
       position: absolute;
-      width: 454px;
-      height: 151px;
+      width: 28.38rem;
+      height: 9.44rem; /* 151px */
       background-color: white;
-      left: 652px;
-      top: 349px;
-      border-radius: 8px;
+      left: 40.75rem; /* 652px */
+      top: 21.81rem; /* 349px */
+      border-radius: 0.5rem;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-direction: row;
+      justify-content: space-around;
       align-items: center;
       overflow: visible;
       z-index: 10;
+      padding: 0.625rem;
     }
 
     .new-block-empty {
       position: absolute;
-      width: 454px;
-      height: 151px;
+      width: 28.38rem;
+      height: 9.44rem;
       background-color: white;
-      left: 652px;
-      top: 510px;
-      border-radius: 8px;
+      left: 40.75rem;
+      top: 31.88rem; /* 510px */
+      border-radius: 0.5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -187,156 +193,116 @@
 
     .new-block-lower {
       position: absolute;
-      width: 454px;
-      height: 302.4px;
+      width: 28.38rem;
+      height: 18.9rem; /* 302.4px */
       background-color: white;
-      left: 652px;
-      top: 672.34px;
-      border-radius: 8px;
+      left: 40.75rem;
+      top: 42.02rem; /* 672.34px */
+      border-radius: 0.5rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-start;
+      align-items: flex-start;
       overflow: visible;
       z-index: 10;
+      padding: 0.625rem;
     }
 
     .new-empty-block {
       position: absolute;
-      width: 454px;
-      height: 151px;
+      width: 28.38rem;
+      height: 9.44rem;
       background-color: white;
-      left: 188px;
-      top: 818.22px;
-      border-radius: 8px;
+      left: 11.75rem;
+      top: 51.14rem; /* 818.22px */
+      border-radius: 0.5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       overflow: visible;
       z-index: 10;
+      padding: 0.625rem;
     }
 
     .new-block .mlog-image {
       width: 30%;
       height: 30%;
       object-fit: contain;
-      border-radius: 8px;
+      border-radius: 0.5rem;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: -19px;
+      margin: 0 auto;
+    }
+
+    .new-block .icon-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.125rem;
     }
 
     .new-block .miloc-image, .new-block .milph-image, .new-block .milmas-image, .new-block .mili-image {
-      width: 20px;
-      height: 20px;
+      width: 1.25rem; /* 20px */
+      height: 1.25rem;
       object-fit: contain;
-      border-radius: 8px;
-      display: block;
+      border-radius: 0.5rem;
     }
 
-    .new-block .miloc-image {
-      margin-left: 113.6px;
-      margin-top: 10px;
-    }
-
-    .new-block .milph-image {
-      margin-left: -10.8px;
-      margin-top: -20px;
-    }
-
-    .new-block .milmas-image {
-      margin-left: 132.6px;
-      margin-top: -20px;
-    }
-
-    .new-block .mili-image {
-      margin-left: 280px;
-      margin-top: -28px;
-    }
-
-    .new-block .locations-text {
-      font-size: 12px;
+    .new-block .locations-text, .new-block .call-text, .new-block .message-text, .new-block .info-text {
+      font-size: 0.75rem; /* 12px */
       color: #333;
-      margin-top: -13.9px;
-      margin-left: -199.8px;
-      display: block;
-    }
-
-    .new-block .call-text {
-      font-size: 12px;
-      color: #333;
-      margin-top: 4.88px;
-      margin-left: -10.8px;
-      display: block;
-    }
-
-    .new-block .message-text {
-      font-size: 12px;
-      color: #333;
-      margin-top: -14.12px;
-      margin-left: 132.6px;
-      display: block;
-    }
-
-    .new-block .info-text {
-      font-size: 12px;
-      color: #333;
-      margin-top: -14.12px;
-      margin-left: 280px;
-      display: block;
+      text-align: center;
     }
 
     .white-block span, .new-block-empty span, .new-block-lower span, .new-empty-block span {
-      position: absolute;
-      font-size: 18px;
+      font-size: 1.125rem; /* 18px */
       color: #333;
       font-weight: bold;
     }
 
     .white-block .transaction, .new-block-empty .credit-checks, .new-block-lower .messages, .new-empty-block .payments {
-      top: 10px;
-      left: 10px;
+      position: absolute;
+      top: 0.625rem;
+      left: 0.625rem;
     }
 
     .new-block-empty .processing-button {
-      width: 150px;
-      height: 40px;
-      top: 40px;
-      left: 10px;
-      font-size: 16px;
+      width: 9.38rem; /* 150px */
+      height: 2.5rem; /* 40px */
+      top: 2.5rem;
+      left: 0.625rem;
+      font-size: 1rem; /* 16px */
       color: white;
       background-color: #085660;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 8px;
+      border-radius: 0.5rem;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .new-block-empty .accepted-button {
-      width: 150px;
-      height: 40px;
-      top: 40px;
-      left: 170px;
-      font-size: 16px;
+      width: 9.38rem;
+      height: 2.5rem;
+      top: 2.5rem;
+      left: 10.63rem; /* 170px */
+      font-size: 1rem;
       color: white;
       background-color: #808080;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 8px;
+      border-radius: 0.5rem;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .new-block-empty .pay-installment {
       position: absolute;
-      top: 104.32px;
-      left: 123.4px;
-      font-size: 18px;
+      top: 6.52rem; /* 104.32px */
+      left: 7.71rem; /* 123.4px */
+      font-size: 1.125rem;
       color: #333;
       font-weight: normal;
       cursor: pointer;
@@ -350,61 +316,61 @@
 
     .new-block-empty .milc-image {
       position: absolute;
-      width: 24px;
-      height: 24px;
-      top: 100.54px;
-      left: 94.4px;
+      width: 1.5rem; /* 24px */
+      height: 1.5rem;
+      top: 6.28rem; /* 100.54px */
+      left: 5.9rem; /* 94.4px */
       object-fit: contain;
-      border-radius: 8px;
+      border-radius: 0.5rem;
     }
 
     .new-block-lower .millist-image, .new-block-lower .milat-image, .new-block-lower .miljef-image, .new-block-lower .millis-image {
       position: absolute;
-      width: 24px;
-      height: 24px;
-      left: 10px;
+      width: 1.5rem;
+      height: 1.5rem;
+      left: 0.625rem;
       object-fit: contain;
-      border-radius: 8px;
+      border-radius: 0.5rem;
     }
 
     .new-block-lower .millist-image {
-      top: 55.12px;
+      top: 3.45rem; /* 55.12px */
     }
 
     .new-block-lower .milat-image {
-      top: 113.58px;
+      top: 7.1rem; /* 113.58px */
     }
 
     .new-block-lower .miljef-image {
-      top: 170.56px;
+      top: 10.66rem; /* 170.56px */
     }
 
     .new-block-lower .millis-image {
-      top: 219.86px;
+      top: 13.74rem; /* 219.86px */
     }
 
     .new-empty-block .milp-image, .new-empty-block .miltime-image {
       position: absolute;
-      width: 48px;
-      height: 48px;
-      left: 10px;
+      width: 3rem; /* 48px */
+      height: 3rem;
+      left: 0.625rem;
       object-fit: contain;
-      border-radius: 8px;
+      border-radius: 0.5rem;
     }
 
     .new-empty-block .milp-image {
-      top: 40px;
+      top: 2.5rem;
     }
 
     .new-empty-block .miltime-image {
-      top: 98px;
+      top: 6.13rem; /* 98px */
     }
 
     .new-empty-block .make-payment {
       position: absolute;
-      top: 48px;
-      left: 68px;
-      font-size: 18px;
+      top: 3rem;
+      left: 4.25rem; /* 68px */
+      font-size: 1.125rem;
       color: #333;
       font-weight: bold;
       cursor: pointer;
@@ -418,9 +384,9 @@
 
     .new-empty-block .your-town-utilities {
       position: absolute;
-      top: 106px;
-      left: 68px;
-      font-size: 16px;
+      top: 6.63rem; /* 106px */
+      left: 4.25rem;
+      font-size: 1rem; /* 16px */
       color: #333;
       font-weight: bold;
       cursor: pointer;
@@ -434,142 +400,142 @@
 
     .new-empty-block .amount-due {
       position: absolute;
-      top: 106px;
-      left: 280px;
-      font-size: 14px;
+      top: 6.63rem;
+      left: 17.5rem; /* 280px */
+      font-size: 0.875rem; /* 14px */
       color: #000;
       font-weight: normal;
     }
 
     .new-block-lower .holiday-hours {
       position: absolute;
-      top: 58.9px;
-      left: 42px;
-      font-size: 16px;
+      top: 3.68rem; /* 58.9px */
+      left: 2.63rem; /* 42px */
+      font-size: 1rem;
       color: #333;
       font-weight: bold;
     }
 
     .new-block-lower .holiday-date {
       position: absolute;
-      top: 58.9px;
-      left: 414.6px;
-      font-size: 14px;
+      top: 3.68rem;
+      left: 25.91rem; /* 414.6px */
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
     }
 
     .new-block-lower .brunch-text {
       position: absolute;
-      top: 77.9px;
-      left: 10px;
-      font-size: 14px;
+      top: 4.87rem; /* 77.9px */
+      left: 0.625rem;
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 20px - 34.02px);
-      padding-bottom: 2px;
-      padding-left: 34.02px;
+      width: calc(100% - 1.25rem - 2.13rem);
+      padding-bottom: 0.125rem;
+      padding-left: 2.13rem;
     }
 
     .new-block-lower .low-funds {
       position: absolute;
-      top: 117.36px;
-      left: 42px;
-      font-size: 16px;
+      top: 7.34rem; /* 117.36px */
+      left: 2.63rem;
+      font-size: 1rem;
       color: #333;
       font-weight: bold;
     }
 
     .new-block-lower .low-funds-date {
       position: absolute;
-      top: 117.36px;
-      left: 414.6px;
-      font-size: 14px;
+      top: 7.34rem;
+      left: 25.91rem;
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
     }
 
     .new-block-lower .savings-status {
       position: absolute;
-      top: 136.36px;
-      left: 10px;
-      font-size: 14px;
+      top: 8.52rem; /* 136.36px */
+      left: 0.625rem;
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 54px);
-      padding-bottom: 2px;
-      padding-left: 34px;
+      width: calc(100% - 3.38rem);
+      padding-bottom: 0.125rem;
+      padding-left: 2.13rem;
     }
 
     .new-block-lower .jennifer-text {
       position: absolute;
-      top: 170.56px;
-      left: 42px;
-      font-size: 16px;
+      top: 10.66rem;
+      left: 2.63rem;
+      font-size: 1rem;
       color: #333;
       font-weight: bold;
     }
 
     .new-block-lower .jennifer-date {
       position: absolute;
-      top: 170.56px;
-      left: 414.6px;
-      font-size: 14px;
+      top: 10.66rem;
+      left: 25.91rem;
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
     }
 
     .new-block-lower .contract-text {
       position: absolute;
-      top: 189.56px;
-      left: 10px;
-      font-size: 14px;
+      top: 11.85rem; /* 189.56px */
+      left: 0.625rem;
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 54px);
-      padding-bottom: 2px;
-      padding-left: 34px;
+      width: calc(100% - 3.38rem);
+      padding-bottom: 0.125rem;
+      padding-left: 2.13rem;
     }
 
     .new-block-lower .home-improvement-text {
       position: absolute;
-      top: 219.86px;
-      left: 42px;
-      font-size: 16px;
+      top: 13.74rem;
+      left: 2.63rem;
+      font-size: 1rem;
       color: #333;
       font-weight: bold;
     }
 
     .new-block-lower .home-improvement-date {
       position: absolute;
-      top: 219.86px;
-      left: 414.6px;
-      font-size: 14px;
+      top: 13.74rem;
+      left: 25.91rem;
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
     }
 
     .new-block-lower .get-started-text {
       position: absolute;
-      top: 238.86px;
-      left: 10px;
-      font-size: 14px;
+      top: 14.93rem; /* 238.86px */
+      left: 0.625rem;
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 54px);
-      padding-bottom: 2px;
-      padding-left: 34px;
+      width: calc(100% - 3.38rem);
+      padding-bottom: 0.125rem;
+      padding-left: 2.13rem;
     }
 
     .new-block-lower .see-more {
       position: absolute;
-      bottom: 10px;
-      right: 10px;
-      font-size: 16px;
+      bottom: 0.625rem;
+      right: 0.625rem;
+      font-size: 1rem;
       color: #085660;
       font-weight: normal;
       cursor: pointer;
@@ -582,11 +548,13 @@
     }
 
     .white-block .details {
-      top: 70px;
-      left: 10px;
+      position: absolute;
+      top: 4.38rem; /* 70px */
+      left: 0.625rem;
       display: flex;
       justify-content: space-between;
-      width: calc(100% - 20px);
+      width: calc(100% - 1.25rem);
+      font-size: 0.875rem;
     }
 
     .white-block .details::before {
@@ -599,23 +567,24 @@
 
     .white-block .date {
       position: absolute;
-      top: 94px;
-      left: 10px;
-      font-size: 14px;
+      top: 5.88rem; /* 94px */
+      left: 0.625rem;
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 20px);
-      padding-bottom: 2px;
+      width: calc(100% - 1.25rem);
+      padding-bottom: 0.125rem;
     }
 
     .white-block .details-second {
       position: absolute;
-      top: 120px;
-      left: 10px;
+      top: 7.5rem; /* 120px */
+      left: 0.625rem;
       display: flex;
       justify-content: space-between;
-      width: calc(100% - 20px);
+      width: calc(100% - 1.25rem);
+      font-size: 0.875rem;
     }
 
     .white-block .details-second::before {
@@ -628,23 +597,24 @@
 
     .white-block .date-second {
       position: absolute;
-      top: 144px;
-      left: 10px;
-      font-size: 14px;
+      top: 9rem; /* 144px */
+      left: 0.625rem;
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 20px);
-      padding-bottom: 2px;
+      width: calc(100% - 1.25rem);
+      padding-bottom: 0.125rem;
     }
 
     .white-block .details-third {
       position: absolute;
-      top: 170px;
-      left: 10px;
+      top: 10.63rem; /* 170px */
+      left: 0.625rem;
       display: flex;
       justify-content: space-between;
-      width: calc(100% - 20px);
+      width: calc(100% - 1.25rem);
+      font-size: 0.875rem;
     }
 
     .white-block .details-third::before {
@@ -657,23 +627,24 @@
 
     .white-block .date-third {
       position: absolute;
-      top: 194px;
-      left: 10px;
-      font-size: 14px;
+      top: 12.13rem; /* 194px */
+      left: 0.625rem;
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 20px);
-      padding-bottom: 2px;
+      width: calc(100% - 1.25rem);
+      padding-bottom: 0.125rem;
     }
 
     .white-block .details-fourth {
       position: absolute;
-      top: 220px;
-      left: 10px;
+      top: 13.75rem; /* 220px */
+      left: 0.625rem;
       display: flex;
       justify-content: space-between;
-      width: calc(100% - 20px);
+      width: calc(100% - 1.25rem);
+      font-size: 0.875rem;
     }
 
     .white-block .details-fourth::before {
@@ -686,23 +657,24 @@
 
     .white-block .date-fourth {
       position: absolute;
-      top: 244px;
-      left: 10px;
-      font-size: 14px;
+      top: 15.25rem; /* 244px */
+      left: 0.625rem;
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 20px);
-      padding-bottom: 2px;
+      width: calc(100% - 1.25rem);
+      padding-bottom: 0.125rem;
     }
 
     .white-block .details-fifth {
       position: absolute;
-      top: 270px;
-      left: 10px;
+      top: 16.88rem; /* 270px */
+      left: 0.625rem;
       display: flex;
       justify-content: space-between;
-      width: calc(100% - 20px);
+      width: calc(100% - 1.25rem);
+      font-size: 0.875rem;
     }
 
     .white-block .details-fifth::before {
@@ -715,23 +687,24 @@
 
     .white-block .date-fifth {
       position: absolute;
-      top: 294px;
-      left: 10px;
-      font-size: 14px;
+      top: 18.38rem; /* 294px */
+      left: 0.625rem;
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 20px);
-      padding-bottom: 2px;
+      width: calc(100% - 1.25rem);
+      padding-bottom: 0.125rem;
     }
 
     .white-block .details-sixth {
       position: absolute;
-      top: 320px;
-      left: 10px;
+      top: 20rem; /* 320px */
+      left: 0.625rem;
       display: flex;
       justify-content: space-between;
-      width: calc(100% - 20px);
+      width: calc(100% - 1.25rem);
+      font-size: 0.875rem;
     }
 
     .white-block .details-sixth::before {
@@ -744,21 +717,21 @@
 
     .white-block .date-sixth {
       position: absolute;
-      top: 344px;
-      left: 10px;
-      font-size: 14px;
+      top: 21.5rem; /* 344px */
+      left: 0.625rem;
+      font-size: 0.875rem;
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 20px);
-      padding-bottom: 2px;
+      width: calc(100% - 1.25rem);
+      padding-bottom: 0.125rem;
     }
 
     .white-block .see-more {
       position: absolute;
-      bottom: 10px;
-      right: 10px;
-      font-size: 16px;
+      bottom: 0.625rem;
+      right: 0.625rem;
+      font-size: 1rem;
       color: #085660;
       font-weight: normal;
       cursor: pointer;
@@ -776,16 +749,16 @@
     }
 
     .credit-amount, .used-amount {
-      margin-left: 130px;
+      margin-left: 8.13rem; /* 130px */
     }
 
     .available-amount {
-      margin-left: 50px;
+      margin-left: 3.13rem; /* 50px */
     }
 
     .available-label {
       white-space: nowrap;
-      margin-right: 24px;
+      margin-right: 1.5rem; /* 24px */
     }
 
     .white-block .transaction-item:hover::before,
@@ -801,427 +774,406 @@
         flex-direction: column;
         align-items: center;
         height: auto;
-        padding-bottom: 20px;
+        padding-bottom: 1.25rem;
       }
       img:first-child {
-        max-height: 150px;
+        max-height: 9.38rem; /* 150px */
       }
       .greeting {
         position: static;
-        font-size: 20px;
-        margin: 10px auto;
+        font-size: 1.25rem; /* 20px */
+        margin: 0.625rem auto;
         text-align: center;
       }
       .profile-image {
         position: static;
-        width: 30px;
-        height: 30px;
-        margin: 10px auto;
+        width: 1.88rem; /* 30px */
+        height: 1.88rem;
+        margin: 0.625rem auto;
       }
       .credit-button, .used-button, .available-button {
         position: static;
         width: 90%;
-        max-width: 300px;
-        height: 60px;
-        font-size: 16px;
-        margin: 10px auto;
+        max-width: 18.75rem; /* 300px */
+        height: 3.75rem; /* 60px */
+        font-size: 1rem; /* 16px */
+        margin: 0.625rem auto;
       }
       .credit-amount, .used-amount {
-        margin-left: 50px;
+        margin-left: 3.13rem;
       }
       .available-amount {
-        margin-left: 30px;
+        margin-left: 1.88rem;
       }
       .new-button, .deposit-image-button, .millpay-button, .message-button {
         position: static;
-        width: 60px;
-        height: 60px;
-        font-size: 12px;
-        margin: 5px;
+        width: 3.75rem; /* 60px */
+        height: 3.75rem;
+        font-size: 0.75rem; /* 12px */
+        margin: 0.31rem;
       }
       .new-button img, .deposit-image-button img, .millpay-button img, .message-button img {
-        width: 25px;
-        height: 25px;
+        width: 1.56rem; /* 25px */
+        height: 1.56rem;
       }
       .white-block, .new-block, .new-block-empty, .new-block-lower, .new-empty-block {
         position: static;
         width: 90%;
-        max-width: 300px;
-        margin: 10px auto;
+        max-width: 18.75rem;
+        margin: 0.625rem auto;
       }
       .white-block {
-        height: 350px;
+        height: 21.88rem; /* 350px */
       }
       .new-block, .new-block-empty, .new-empty-block {
-        height: 120px;
+        height: 7.5rem; /* 120px */
       }
       .new-block-lower {
-        height: 250px;
+        height: 15.63rem; /* 250px */
       }
       .white-block span, .new-block-empty span, .new-block-lower span, .new-empty-block span {
-        font-size: 14px;
+        font-size: 0.875rem; /* 14px */
+      }
+      .new-block {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0.5rem;
       }
       .new-block .mlog-image {
         width: 25%;
         height: 25%;
-        margin-top: -15px;
+        margin: 0 auto;
+      }
+      .new-block .icon-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.125rem;
       }
       .new-block .miloc-image, .new-block .milph-image, .new-block .milmas-image, .new-block .mili-image {
-        width: 18px;
-        height: 18px;
-      }
-      .new-block .miloc-image {
-        margin-left: 50px;
-        margin-top: 5px;
-      }
-      .new-block .milph-image {
-        margin-left: -5px;
-        margin-top: -15px;
-      }
-      .new-block .milmas-image {
-        margin-left: 60px;
-        margin-top: -15px;
-      }
-      .new-block .mili-image {
-        margin-left: 120px;
-        margin-top: -20px;
+        width: 1rem; /* 16px */
+        height: 1rem;
       }
       .new-block .locations-text, .new-block .call-text, .new-block .message-text, .new-block .info-text {
-        font-size: 10px;
-      }
-      .new-block .locations-text {
-        margin-left: -90px;
-        margin-top: -10px;
-      }
-      .new-block .call-text {
-        margin-left: -5px;
-        margin-top: 2px;
-      }
-      .new-block .message-text {
-        margin-left: 60px;
-        margin-top: -10px;
-      }
-      .new-block .info-text {
-        margin-left: 120px;
-        margin-top: -10px;
+        font-size: 0.625rem; /* 10px */
       }
       .new-block-empty .processing-button, .new-block-empty .accepted-button {
-        width: 120px;
-        height: 35px;
-        font-size: 14px;
-        top: 30px;
+        width: 7.5rem; /* 120px */
+        height: 2.19rem; /* 35px */
+        font-size: 0.875rem;
+        top: 1.88rem;
       }
       .new-block-empty .processing-button {
-        left: 10px;
+        left: 0.625rem;
       }
       .new-block-empty .accepted-button {
-        left: 140px;
+        left: 8.75rem; /* 140px */
       }
       .new-block-empty .pay-installment {
-        top: 80px;
-        left: 90px;
-        font-size: 14px;
+        top: 5rem;
+        left: 5.63rem; /* 90px */
+        font-size: 0.875rem;
       }
       .new-block-empty .milc-image {
-        top: 78px;
-        left: 60px;
-        width: 20px;
-        height: 20px;
+        top: 4.88rem;
+        left: 3.75rem; /* 60px */
+        width: 1.25rem;
+        height: 1.25rem;
       }
       .new-block-lower .millist-image, .new-block-lower .milat-image, .new-block-lower .miljef-image, .new-block-lower .millis-image {
-        width: 20px;
-        height: 20px;
+        width: 1.25rem;
+        height: 1.25rem;
       }
       .new-block-lower .millist-image {
-        top: 45px;
+        top: 2.81rem; /* 45px */
       }
       .new-block-lower .milat-image {
-        top: 90px;
+        top: 5.63rem; /* 90px */
       }
       .new-block-lower .miljef-image {
-        top: 135px;
+        top: 8.44rem; /* 135px */
       }
       .new-block-lower .millis-image {
-        top: 180px;
+        top: 11.25rem; /* 180px */
       }
       .new-block-lower .holiday-hours, .new-block-lower .low-funds, .new-block-lower .jennifer-text, .new-block-lower .home-improvement-text {
-        font-size: 14px;
-        left: 35px;
+        font-size: 0.875rem;
+        left: 2.19rem; /* 35px */
       }
       .new-block-lower .holiday-hours {
-        top: 48px;
+        top: 3rem;
       }
       .new-block-lower .holiday-date {
-        top: 48px;
-        left: 260px;
-        font-size: 12px;
+        top: 3rem;
+        left: 16.25rem; /* 260px */
+        font-size: 0.75rem;
       }
       .new-block-lower .brunch-text {
-        top: 65px;
-        font-size: 12px;
-        width: calc(100% - 50px);
-        padding-left: 30px;
+        top: 4.06rem; /* 65px */
+        font-size: 0.75rem;
+        width: calc(100% - 3.13rem);
+        padding-left: 1.88rem;
       }
       .new-block-lower .low-funds {
-        top: 95px;
+        top: 5.94rem; /* 95px */
       }
       .new-block-lower .low-funds-date {
-        top: 95px;
-        left: 260px;
-        font-size: 12px;
+        top: 5.94rem;
+        left: 16.25rem;
+        font-size: 0.75rem;
       }
       .new-block-lower .savings-status {
-        top: 110px;
-        font-size: 12px;
-        width: calc(100% - 50px);
-        padding-left: 30px;
+        top: 6.88rem; /* 110px */
+        font-size: 0.75rem;
+        width: calc(100% - 3.13rem);
+        padding-left: 1.88rem;
       }
       .new-block-lower .jennifer-text {
-        top: 140px;
+        top: 8.75rem; /* 140px */
       }
       .new-block-lower .jennifer-date {
-        top: 140px;
-        left: 260px;
-        font-size: 12px;
+        top: 8.75rem;
+        left: 16.25rem;
+        font-size: 0.75rem;
       }
       .new-block-lower .contract-text {
-        top: 155px;
-        font-size: 12px;
-        width: calc(100% - 50px);
-        padding-left: 30px;
+        top: 9.69rem; /* 155px */
+        font-size: 0.75rem;
+        width: calc(100% - 3.13rem);
+        padding-left: 1.88rem;
       }
       .new-block-lower .home-improvement-text {
-        top: 185px;
+        top: 11.56rem; /* 185px */
       }
       .new-block-lower .home-improvement-date {
-        top: 185px;
-        left: 260px;
-        font-size: 12px;
+        top: 11.56rem;
+        left: 16.25rem;
+        font-size: 0.75rem;
       }
       .new-block-lower .get-started-text {
-        top: 200px;
-        font-size: 12px;
-        width: calc(100% - 50px);
-        padding-left: 30px;
+        top: 12.5rem; /* 200px */
+        font-size: 0.75rem;
+        width: calc(100% - 3.13rem);
+        padding-left: 1.88rem;
       }
       .new-block-lower .see-more {
-        font-size: 14px;
+        font-size: 0.875rem;
       }
       .new-empty-block .milp-image, .new-empty-block .miltime-image {
-        width: 40px;
-        height: 40px;
+        width: 2.5rem; /* 40px */
+        height: 2.5rem;
       }
       .new-empty-block .milp-image {
-        top: 30px;
+        top: 1.88rem;
       }
       .new-empty-block .miltime-image {
-        top: 80px;
+        top: 5rem;
       }
       .new-empty-block .make-payment {
-        top: 35px;
-        left: 60px;
-        font-size: 14px;
+        top: 2.19rem;
+        left: 3.75rem;
+        font-size: 0.875rem;
       }
       .new-empty-block .your-town-utilities {
-        top: 85px;
-        left: 60px;
-        font-size: 13px;
+        top: 5.31rem;
+        left: 3.75rem;
+        font-size: 0.81rem; /* 13px */
       }
       .new-empty-block .amount-due {
-        top: 85px;
-        left: 200px;
-        font-size: 12px;
+        top: 5.31rem;
+        left: 12.5rem; /* 200px */
+        font-size: 0.75rem;
       }
       .white-block .transaction {
-        font-size: 14px;
+        font-size: 0.875rem;
       }
       .white-block .details, .white-block .details-second, .white-block .details-third,
       .white-block .details-fourth, .white-block .details-fifth, .white-block .details-sixth {
-        font-size: 12px;
+        font-size: 0.75rem;
       }
       .white-block .details {
-        top: 50px;
+        top: 3.13rem; /* 50px */
       }
       .white-block .date {
-        top: 70px;
-        font-size: 12px;
+        top: 4.38rem; /* 70px */
+        font-size: 0.75rem;
       }
       .white-block .details-second {
-        top: 90px;
+        top: 5.63rem; /* 90px */
       }
       .white-block .date-second {
-        top: 110px;
-        font-size: 12px;
+        top: 6.88rem; /* 110px */
+        font-size: 0.75rem;
       }
       .white-block .details-third {
-        top: 130px;
+        top: 8.13rem; /* 130px */
       }
       .white-block .date-third {
-        top: 150px;
-        font-size: 12px;
+        top: 9.38rem; /* 150px */
+        font-size: 0.75rem;
       }
       .white-block .details-fourth {
-        top: 170px;
+        top: 10.63rem; /* 170px */
       }
       .white-block .date-fourth {
-        top: 190px;
-        font-size: 12px;
+        top: 11.88rem; /* 190px */
+        font-size: 0.75rem;
       }
       .white-block .details-fifth {
-        top: 210px;
+        top: 13.13rem; /* 210px */
       }
       .white-block .date-fifth {
-        top: 230px;
-        font-size: 12px;
+        top: 14.38rem; /* 230px */
+        font-size: 0.75rem;
       }
       .white-block .details-sixth {
-        top: 250px;
+        top: 15.63rem; /* 250px */
       }
       .white-block .date-sixth {
-        top: 270px;
-        font-size: 12px;
+        top: 16.88rem; /* 270px */
+        font-size: 0.75rem;
       }
       .white-block .see-more {
-        font-size: 14px;
+        font-size: 0.875rem;
       }
     }
 
     /* Планшети */
     @media (min-width: 769px) and (max-width: 1024px) {
       .greeting {
-        left: 50px;
-        font-size: 24px;
+        left: 3.13rem; /* 50px */
+        font-size: 1.5rem; /* 24px */
       }
       .profile-image {
-        left: 650px;
-        width: 35px;
-        height: 35px;
+        left: 40.63rem; /* 650px */
+        width: 2.19rem; /* 35px */
+        height: 2.19rem;
       }
       .credit-button, .used-button, .available-button {
-        width: 320px;
-        height: 65px;
-        font-size: 18px;
+        width: 20rem; /* 320px */
+        height: 4.06rem; /* 65px */
+        font-size: 1.13rem; /* 18px */
       }
       .credit-button {
-        left: 50px;
-        top: 140px;
+        left: 3.13rem;
+        top: 8.75rem; /* 140px */
       }
       .used-button {
-        left: 380px;
-        top: 140px;
+        left: 23.75rem; /* 380px */
+        top: 8.75rem;
       }
       .available-button {
-        left: 710px;
-        top: 140px;
+        left: 44.38rem; /* 710px */
+        top: 8.75rem;
       }
       .new-button, .deposit-image-button, .millpay-button, .message-button {
-        width: 65px;
-        height: 65px;
-        font-size: 13px;
+        width: 4.06rem; /* 65px */
+        height: 4.06rem;
+        font-size: 0.81rem; /* 13px */
       }
       .new-button img, .deposit-image-button img, .millpay-button img, .message-button img {
-        width: 28px;
-        height: 28px;
+        width: 1.75rem; /* 28px */
+        height: 1.75rem;
       }
       .new-button {
-        left: 50px;
-        top: 220px;
+        left: 3.13rem;
+        top: 13.75rem; /* 220px */
       }
       .deposit-image-button {
-        left: 125px;
-        top: 220px;
+        left: 7.81rem; /* 125px */
+        top: 13.75rem;
       }
       .millpay-button {
-        left: 200px;
-        top: 220px;
+        left: 12.5rem; /* 200px */
+        top: 13.75rem;
       }
       .message-button {
-        left: 275px;
-        top: 220px;
+        left: 17.19rem; /* 275px */
+        top: 13.75rem;
       }
       .white-block, .new-block, .new-block-empty, .new-block-lower, .new-empty-block {
-        width: 350px;
+        width: 21.88rem; /* 350px */
       }
       .white-block {
-        left: 50px;
-        height: 400px;
+        left: 3.13rem;
+        height: 25rem; /* 400px */
       }
       .new-block {
-        left: 410px;
-        top: 320px;
-        height: 130px;
+        left: 25.63rem; /* 410px */
+        top: 20rem; /* 320px */
+        height: 8.13rem; /* 130px */
       }
       .new-block-empty {
-        left: 410px;
-        top: 460px;
-        height: 130px;
+        left: 25.63rem;
+        top: 28.75rem; /* 460px */
+        height: 8.13rem;
       }
       .new-block-lower {
-        left: 410px;
-        top: 600px;
-        height: 280px;
+        left: 25.63rem;
+        top: 37.5rem; /* 600px */
+        height: 17.5rem; /* 280px */
       }
       .new-empty-block {
-        left: 50px;
-        top: 750px;
-        height: 130px;
+        left: 3.13rem;
+        top: 46.88rem; /* 750px */
+        height: 8.13rem;
       }
       .white-block span, .new-block-empty span, .new-block-lower span, .new-empty-block span {
-        font-size: 16px;
+        font-size: 1rem;
       }
       .new-block .mlog-image {
         width: 28%;
         height: 28%;
       }
       .new-block .miloc-image, .new-block .milph-image, .new-block .milmas-image, .new-block .mili-image {
-        width: 18px;
-        height: 18px;
+        width: 1.13rem; /* 18px */
+        height: 1.13rem;
       }
       .new-block .locations-text, .new-block .call-text, .new-block .message-text, .new-block .info-text {
-        font-size: 11px;
+        font-size: 0.69rem; /* 11px */
       }
       .new-block-empty .processing-button, .new-block-empty .accepted-button {
-        width: 140px;
-        height: 38px;
-        font-size: 15px;
+        width: 8.75rem; /* 140px */
+        height: 2.38rem; /* 38px */
+        font-size: 0.94rem; /* 15px */
       }
       .new-block-empty .pay-installment {
-        font-size: 16px;
+        font-size: 1rem;
       }
       .new-block-empty .milc-image {
-        width: 22px;
-        height: 22px;
+        width: 1.38rem; /* 22px */
+        height: 1.38rem;
       }
       .new-block-lower .millist-image, .new-block-lower .milat-image, .new-block-lower .miljef-image, .new-block-lower .millis-image {
-        width: 22px;
-        height: 22px;
+        width: 1.38rem;
+        height: 1.38rem;
       }
       .new-empty-block .milp-image, .new-empty-block .miltime-image {
-        width: 44px;
-        height: 44px;
+        width: 2.75rem; /* 44px */
+        height: 2.75rem;
       }
       .new-empty-block .make-payment, .new-empty-block .your-town-utilities {
-        font-size: 15px;
+        font-size: 0.94rem;
       }
       .new-empty-block .amount-due {
-        font-size: 13px;
+        font-size: 0.81rem;
       }
       .new-block-lower .holiday-hours, .new-block-lower .low-funds, .new-block-lower .jennifer-text, .new-block-lower .home-improvement-text {
-        font-size: 15px;
+        font-size: 0.94rem;
       }
       .new-block-lower .holiday-date, .new-block-lower .low-funds-date, .new-block-lower .jennifer-date, .new-block-lower .home-improvement-date {
-        font-size: 13px;
+        font-size: 0.81rem;
       }
       .new-block-lower .brunch-text, .new-block-lower .savings-status, .new-block-lower .contract-text, .new-block-lower .get-started-text {
-        font-size: 13px;
+        font-size: 0.81rem;
       }
       .white-block .details, .white-block .details-second, .white-block .details-third,
       .white-block .details-fourth, .white-block .details-fifth, .white-block .details-sixth {
-        font-size: 13px;
+        font-size: 0.81rem;
       }
       .white-block .date, .white-block .date-second, .white-block .date-third,
       .white-block .date-fourth, .white-block .date-fifth, .white-block .date-sixth {
-        font-size: 13px;
+        font-size: 0.81rem;
       }
     }
   </style>
@@ -1282,14 +1234,22 @@
   </div>
   <div class="new-block">
     <img src="images/mlog.jpg" alt="Mlog Image" class="mlog-image">
-    <img src="images/miloc.jpg" alt="Miloc Image" class="miloc-image">
-    <img src="images/milph.jpg" alt="Milph Image" class="milph-image">
-    <img src="images/milmas.jpg" alt="Milmas Image" class="milmas-image">
-    <img src="images/mili.jpg" alt="Mili Image" class="mili-image">
-    <span class="call-text">Call</span>
-    <span class="locations-text">Locations</span>
-    <span class="message-text">Message</span>
-    <span class="info-text">Info</span>
+    <div class="icon-group">
+      <img src="images/miloc.jpg" alt="Miloc Image" class="miloc-image">
+      <span class="locations-text">Locations</span>
+    </div>
+    <div class="icon-group">
+      <img src="images/milph.jpg" alt="Milph Image" class="milph-image">
+      <span class="call-text">Call</span>
+    </div>
+    <div class="icon-group">
+      <img src="images/milmas.jpg" alt="Milmas Image" class="milmas-image">
+      <span class="message-text">Message</span>
+    </div>
+    <div class="icon-group">
+      <img src="images/mili.jpg" alt="Mili Image" class="mili-image">
+      <span class="info-text">Info</span>
+    </div>
   </div>
   <div class="new-block-empty">
     <span class="credit-checks">Credit checks</span>

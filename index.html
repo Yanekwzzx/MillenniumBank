@@ -768,8 +768,14 @@
     /* Медіа-запити для адаптивності */
     @media (max-width: 768px) {
       /* Мобільні пристрої */
+      .header {
+        height: auto;
+        min-height: 300px;
+      }
       .header-top {
         padding: 5px 10px;
+        height: auto;
+        min-height: 80px;
         padding-right: 10px;
       }
       .header-top .top-row, .header-top .bottom-row, .header-top .description-row {
@@ -781,11 +787,21 @@
         margin: 2px 0;
         font-size: 14px;
       }
+      .header-top .bottom-row span, .header-top .description-row span {
+        font-size: 12px;
+      }
+      .header-bottom {
+        height: auto;
+        min-height: 220px;
+        padding: 5px 10px;
+      }
       #fdic-container {
-        position: static;
-        margin: 234.46px auto 10px;
-        width: 95%;
+        position: fixed;
+        top: 80px;
         left: 0;
+        width: 100%;
+        padding: 0 10px;
+        z-index: 1001;
       }
       .fdic-text {
         left: 0;
@@ -799,24 +815,25 @@
         left: 0;
         flex-direction: column;
         align-items: center;
-        width: 95%;
+        width: 100%;
         margin: 10px auto;
       }
       .mill-logo {
-        width: 150px;
+        width: 120px;
       }
       .banking-wrapper {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
         margin-left: 0;
         align-items: center;
+        width: 100%;
       }
       .banking-text {
-        font-size: 18px;
+        font-size: 16px;
       }
       .login-bar {
         margin-left: 0;
-        margin-top: 10px;
+        margin-top: 8px;
         width: 100%;
         max-width: 280px;
         height: auto;
@@ -827,9 +844,15 @@
       .login-part2 {
         width: 30%;
       }
+      .login-label {
+        font-size: 12px;
+      }
+      .login-bottom, .error-message {
+        font-size: 10px;
+      }
       .images-container {
         flex-direction: column;
-        margin-top: 300px;
+        margin-top: 320px;
       }
       .liveeasily-block, .millfamily-img {
         width: 100%;
@@ -1051,40 +1074,38 @@
         <span>Proudly serving the greater Chattanooga area and Lake City, Gainesville and Ocala, Florida.</span>
       </div>
     </div>
-    <div class="header-bottom"></div>
-  </header>
-
-  <!-- FDIC + Логотип + Banking текст -->
-  <div id="fdic-container">
-    <div class="fdic-text">
-      <strong class="fdic-main">FDIC</strong>
-      <em style="font-size: 10px;">FDIC-Insured - Backed by the full faith and credit of the U.S. Government</em>
-    </div>
-    <div class="logo-container">
-      <img src="images/MillLogo.jpg" alt="MillLogo" class="mill-logo">
-      <div class="banking-wrapper">
-        <span class="banking-text personal">Personal Banking</span>
-        <span class="banking-text business">Business Banking</span>
-        <span class="banking-text ebanking">E-Banking</span>
-        <span class="banking-text about">About Us</span>
-
-        <!-- Стрічка логіну -->
-        <div class="login-bar">
-          <div class="login-label">Online Banking</div>
-          <form id="login-form">
-            <div class="login-top">
-              <div class="login-part1">
-                <input type="text" id="username" class="login-input" placeholder="Enter Username" required>
-              </div>
-              <button type="submit" class="login-part2">Log In</button>
+    <div class="header-bottom">
+      <!-- Перемістив FDIC і логотип всередину header-bottom -->
+      <div id="fdic-container">
+        <div class="fdic-text">
+          <strong class="fdic-main">FDIC</strong>
+          <em style="font-size: 10px;">FDIC-Insured - Backed by the full faith and credit of the U.S. Government</em>
+        </div>
+        <div class="logo-container">
+          <img src="images/MillLogo.jpg" alt="MillLogo" class="mill-logo">
+          <div class="banking-wrapper">
+            <span class="banking-text personal">Personal Banking</span>
+            <span class="banking-text business">Business Banking</span>
+            <span class="banking-text ebanking">E-Banking</span>
+            <span class="banking-text about">About Us</span>
+            <div class="login-bar">
+              <div class="login-label">Online Banking</div>
+              <form id="login-form">
+                <div class="login-top">
+                  <div class="login-part1">
+                    <input type="text" id="username" class="login-input" placeholder="Enter Username" required>
+                  </div>
+                  <button type="submit" class="login-part2">Log In</button>
+                </div>
+              </form>
+              <div class="login-bottom">Forgot Password | Enroll</div>
+              <div id="error-message" class="error-message">ERROR 505</div>
             </div>
-          </form>
-          <div class="login-bottom">Forgot Password | Enroll</div>
-          <div id="error-message" class="error-message">ERROR 505</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
   <!-- Блок LiveEasily + MillFamily -->
   <div class="images-container">

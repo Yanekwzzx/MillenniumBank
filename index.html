@@ -8,10 +8,21 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&display=swap">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <style>
+    /* Глобальні налаштування */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Source Sans 3', sans-serif;
       background-color: #f8f9fa;
       margin: 0;
+      overflow-x: hidden; /* Прибираємо горизонтальний повзунок */
+    }
+
+    img {
+      max-width: 100%; /* Запобігаємо переповненню зображень */
+      height: auto;
     }
 
     /* Шапка */
@@ -239,11 +250,17 @@
       display: flex;
       flex-direction: row;
       margin-top: 234.46px;
+      width: 100%;
+      max-width: 1864px; /* Оригінал: 932px + 932px */
+      margin-left: auto;
+      margin-right: auto;
+      flex-wrap: wrap;
     }
 
     .liveeasily-block {
       background-color: #0f525f;
-      width: 932px;
+      width: 50%; /* Оригінал: 932px */
+      max-width: 932px;
       height: 568px;
       display: flex;
       justify-content: center;
@@ -257,20 +274,24 @@
 
     .millfamily-img {
       display: block;
-      width: 932px;
+      width: 50%; /* Оригінал: 932px */
+      max-width: 932px;
       height: auto;
     }
 
     /* Новий блок 3 секції */
     .three-sections {
       display: flex;
-      width: 1496px;
+      width: 100%;
+      max-width: 1496px; /* Оригінал: 1496px */
       height: 507.6px;
       margin: 0 auto;
+      flex-wrap: wrap;
     }
 
     .section {
-      width: 498.66px;
+      width: 33.33%; /* Оригінал: 498.66px */
+      max-width: 498.66px;
       height: 507.6px;
       position: relative;
     }
@@ -421,7 +442,7 @@
       opacity: 0.9;
     }
 
-    /* Banking On-The-Go під лівим блоком */
+    /* Banking On-The-Go */
     .banking-onthego-container {
       display: flex;
       flex-direction: column;
@@ -743,6 +764,229 @@
       color: #f28c38;
       text-decoration: underline;
     }
+
+    /* Медіа-запити для адаптивності */
+    @media (max-width: 768px) {
+      /* Мобільні пристрої */
+      .header-top {
+        padding-right: 20px; /* Зменшуємо відступ */
+      }
+      .header-top .top-row, .header-top .bottom-row, .header-top .description-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-top a {
+        margin: 5px 0;
+      }
+      #fdic-container {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 10px auto;
+        width: 90%;
+      }
+      .fdic-text {
+        left: 0;
+      }
+      .logo-container {
+        left: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 90%;
+        margin: 10px auto;
+      }
+      .banking-wrapper {
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 0;
+        align-items: flex-start;
+      }
+      .login-bar {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+        max-width: 300px;
+      }
+      .images-container {
+        flex-direction: column;
+      }
+      .liveeasily-block, .millfamily-img {
+        width: 100%;
+        max-width: none;
+        height: auto;
+      }
+      .liveeasily-block {
+        height: 300px;
+      }
+      .three-sections {
+        flex-direction: column;
+        height: auto;
+      }
+      .section {
+        width: 100%;
+        max-width: none;
+        height: 300px;
+      }
+      .section.left, .section.center, .section.right {
+        padding-top: 20px;
+      }
+      .section img {
+        width: 50%;
+        max-width: 100px;
+      }
+      .section .label-text {
+        font-size: 24px;
+      }
+      .section .subtext {
+        font-size: 14px;
+      }
+      .section .button {
+        width: 80%;
+        max-width: 200px;
+      }
+      .banking-onthego-container {
+        margin-left: 0;
+        width: 90%;
+        margin: 20px auto;
+      }
+      .banking-onthego {
+        left: 0;
+        padding-left: 10px;
+        font-size: 24px;
+      }
+      .banking-onthego-subtext {
+        left: 0;
+        padding-left: 10px;
+        font-size: 14px;
+        max-width: 90%;
+      }
+      .follow-us-text {
+        position: relative;
+        left: 0;
+        top: 0;
+        padding-left: 10px;
+        margin-top: 10px;
+        font-size: 14px;
+        max-width: 90%;
+      }
+      .banking-onthego-button {
+        left: 0;
+        margin-left: 10px;
+      }
+      .millphone-img {
+        left: 0;
+        margin-left: 10px;
+      }
+      .millvideo {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 350px;
+      }
+      .youtube-button {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 257.18px;
+      }
+      .youtube-container {
+        margin-right: 0;
+        left: 0;
+        width: 90%;
+        margin: 20px auto;
+      }
+      .youtube-text {
+        font-size: 24px;
+        margin-right: 10px;
+      }
+      .bottom-block {
+        height: auto;
+        padding-bottom: 200px;
+      }
+      .millhouse-img, .milljha-img {
+        max-width: 90%;
+      }
+      .about-us-text, .faq-text, .usa-patriot-act-text, .fdic-notice-text,
+      .online-security-text, .privacy-policy-text, .terms-of-use-text,
+      .contact-text, .locations-text, .cra-public-file-text {
+        position: relative;
+        left: 0;
+        margin: 10px auto;
+        width: 90%;
+        top: 0;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      /* Планшети */
+      .header-top {
+        padding-right: 50px;
+      }
+      #fdic-container {
+        left: 100px;
+      }
+      .fdic-text {
+        left: -1cm;
+      }
+      .logo-container {
+        left: -1cm;
+      }
+      .banking-wrapper {
+        gap: 1cm;
+        margin-left: 1cm;
+      }
+      .login-bar {
+        margin-left: 0;
+      }
+      .images-container {
+        flex-direction: row;
+      }
+      .liveeasily-block, .millfamily-img {
+        width: 50%;
+        max-width: none;
+      }
+      .three-sections {
+        flex-wrap: wrap;
+      }
+      .section {
+        width: 50%;
+        max-width: none;
+        height: 400px;
+      }
+      .banking-onthego-container {
+        margin-left: calc((100% - 1200px)/2);
+      }
+      .banking-onthego {
+        left: 5cm;
+      }
+      .banking-onthego-subtext {
+        left: 5cm;
+      }
+      .follow-us-text {
+        left: calc(5cm + 300px + 10px + 2cm);
+        padding-left: 30px;
+      }
+      .banking-onthego-button {
+        left: calc(5cm + 1cm);
+      }
+      .millphone-img {
+        left: calc(5cm + 1cm);
+      }
+      .millvideo {
+        left: calc(5cm + 146.41px + 10px + 2cm);
+      }
+      .youtube-button {
+        left: calc(5cm + 146.41px + 10px + 2cm);
+      }
+      .youtube-container {
+        margin-right: calc((100% - 1200px)/2);
+        left: -5cm;
+      }
+    }
   </style>
 </head>
 <body>
@@ -831,16 +1075,16 @@
     </div>
   </div>
 
-  <!-- Banking On-The-Go під лівим блоком -->
+  <!-- Banking On-The-Go -->
   <div class="banking-onthego-container">
     <div class="banking-onthego">
       Banking<br>
       On-The-Go
     </div>
     <div class="banking-onthego-subtext">
-Millennium's mobile banking allows you to enjoy
- our local banking experience from anywhere in
-                                    the world.
+      Millennium's mobile banking allows you to enjoy
+      our local banking experience from anywhere in
+      the world.
     </div>
     <div class="follow-us-text">
       Follow us to stay up to date with our latest happenings.
@@ -854,7 +1098,7 @@ Millennium's mobile banking allows you to enjoy
     <button class="youtube-button">Millennium Bank YouTube</button>
   </div>
 
-  <!-- Check us out on YouTube! під правим блоком -->
+  <!-- Check us out on YouTube! -->
   <div class="youtube-container">
     <div class="youtube-text">
       Check us out on<br>

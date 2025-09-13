@@ -86,7 +86,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 8px; /* Додано закруглення кутів */
+      border-radius: 8px;
     }
 
     .new-button {
@@ -477,8 +477,9 @@
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 20px);
+      width: calc(100% - 20px - 34.02px);
       padding-bottom: 2px;
+      padding-left: 34.02px;
     }
 
     .new-block-lower .low-funds {
@@ -507,8 +508,9 @@
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 20px);
+      width: calc(100% - 54px);
       padding-bottom: 2px;
+      padding-left: 34px;
     }
 
     .new-block-lower .jennifer-text {
@@ -537,8 +539,9 @@
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 20px);
+      width: calc(100% - 54px);
       padding-bottom: 2px;
+      padding-left: 34px;
     }
 
     .new-block-lower .home-improvement-text {
@@ -567,8 +570,9 @@
       color: #999;
       font-weight: normal;
       border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-      width: calc(100% - 20px);
+      width: calc(100% - 54px);
       padding-bottom: 2px;
+      padding-left: 34px;
     }
 
     .new-block-lower .see-more {
@@ -793,6 +797,13 @@
       white-space: nowrap;
       margin-right: 24px;
     }
+
+    /* Додано стилі для підкреслення транзакцій при наведенні */
+    .white-block .transaction-item:hover::before,
+    .white-block .transaction-item:hover::after {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -801,19 +812,19 @@
   <img src="images/jaw.jpg" alt="Profile Image" class="profile-image">
   <div class="credit-button">
     <div class="credit-button-content">
-      <span>Credit limit</span>
-      <span class="credit-amount">$15,499</span>
+      <span>Checking</span>
+      <span class="credit-amount">$1,185.05</span>
     </div>
   </div>
   <div class="used-button">
     <div class="used-button-content">
-      <span>Used</span>
-      <span class="used-amount">$9,512.21</span>
+      <span>Savings</span>
+      <span class="used-amount">$825.59</span>
     </div>
   </div>
   <div class="available-button">
     <div class="available-button-content">
-      <span class="available-label">Available for use</span>
+      <span class="available-label">Loan</span>
       <span class="available-amount">$5,986.21</span>
     </div>
   </div>
@@ -835,17 +846,17 @@
   </div>
   <div class="white-block">
     <span class="transaction">Transactions</span>
-    <span class="details"></span>
+    <span class="details transaction-item"></span>
     <span class="date">Sep 7</span>
-    <span class="details-second"></span>
+    <span class="details-second transaction-item"></span>
     <span class="date-second">Sep 3</span>
-    <span class="details-third"></span>
+    <span class="details-third transaction-item"></span>
     <span class="date-third">Sep 3</span>
-    <span class="details-fourth"></span>
+    <span class="details-fourth transaction-item"></span>
     <span class="date-fourth">Sep 2</span>
-    <span class="details-fifth"></span>
+    <span class="details-fifth transaction-item"></span>
     <span class="date-fifth">Sep 2</span>
-    <span class="details-sixth"></span>
+    <span class="details-sixth transaction-item"></span>
     <span class="date-sixth">Aug 30</span>
     <span class="see-more">See more</span>
   </div>
@@ -898,12 +909,10 @@
   <script>
     function makePayment() {
       console.log("Make a payment clicked!");
-      // Додайте тут код для обробки платежу, якщо потрібно
     }
 
     function yourTownUtilities() {
       console.log("Your Town Utilities clicked!");
-      // Додайте тут код для обробки кліку по Your Town Utilities, якщо потрібно
     }
   </script>
 </body>

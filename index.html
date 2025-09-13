@@ -769,14 +769,12 @@
     @media (max-width: 768px) {
       /* Мобільні пристрої */
       .header {
-        height: auto;
-        min-height: 300px;
+        height: 234.46px;
       }
       .header-top {
         padding: 5px 10px;
-        height: auto;
-        min-height: 80px;
         padding-right: 10px;
+        height: 92.53px;
       }
       .header-top .top-row, .header-top .bottom-row, .header-top .description-row {
         flex-direction: column;
@@ -791,13 +789,12 @@
         font-size: 12px;
       }
       .header-bottom {
-        height: auto;
-        min-height: 220px;
+        height: 141.93px;
         padding: 5px 10px;
       }
       #fdic-container {
         position: fixed;
-        top: 80px;
+        top: 92.53px;
         left: 0;
         width: 100%;
         padding: 0 10px;
@@ -816,7 +813,7 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        margin: 10px auto;
+        margin: 5px auto;
       }
       .mill-logo {
         width: 120px;
@@ -852,7 +849,7 @@
       }
       .images-container {
         flex-direction: column;
-        margin-top: 320px;
+        margin-top: 250px;
       }
       .liveeasily-block, .millfamily-img {
         width: 100%;
@@ -1074,38 +1071,38 @@
         <span>Proudly serving the greater Chattanooga area and Lake City, Gainesville and Ocala, Florida.</span>
       </div>
     </div>
-    <div class="header-bottom">
-      <!-- Перемістив FDIC і логотип всередину header-bottom -->
-      <div id="fdic-container">
-        <div class="fdic-text">
-          <strong class="fdic-main">FDIC</strong>
-          <em style="font-size: 10px;">FDIC-Insured - Backed by the full faith and credit of the U.S. Government</em>
-        </div>
-        <div class="logo-container">
-          <img src="images/MillLogo.jpg" alt="MillLogo" class="mill-logo">
-          <div class="banking-wrapper">
-            <span class="banking-text personal">Personal Banking</span>
-            <span class="banking-text business">Business Banking</span>
-            <span class="banking-text ebanking">E-Banking</span>
-            <span class="banking-text about">About Us</span>
-            <div class="login-bar">
-              <div class="login-label">Online Banking</div>
-              <form id="login-form">
-                <div class="login-top">
-                  <div class="login-part1">
-                    <input type="text" id="username" class="login-input" placeholder="Enter Username" required>
-                  </div>
-                  <button type="submit" class="login-part2">Log In</button>
-                </div>
-              </form>
-              <div class="login-bottom">Forgot Password | Enroll</div>
-              <div id="error-message" class="error-message">ERROR 505</div>
+    <div class="header-bottom"></div>
+  </header>
+
+  <!-- FDIC + Логотип + Banking текст -->
+  <div id="fdic-container">
+    <div class="fdic-text">
+      <strong class="fdic-main">FDIC</strong>
+      <em style="font-size: 10px;">FDIC-Insured - Backed by the full faith and credit of the U.S. Government</em>
+    </div>
+    <div class="logo-container">
+      <img src="images/MillLogo.jpg" alt="MillLogo" class="mill-logo">
+      <div class="banking-wrapper">
+        <span class="banking-text personal">Personal Banking</span>
+        <span class="banking-text business">Business Banking</span>
+        <span class="banking-text ebanking">E-Banking</span>
+        <span class="banking-text about">About Us</span>
+        <div class="login-bar">
+          <div class="login-label">Online Banking</div>
+          <form id="login-form">
+            <div class="login-top">
+              <div class="login-part1">
+                <input type="text" id="username" class="login-input" placeholder="Enter Username" required>
+              </div>
+              <button type="submit" class="login-part2">Log In</button>
             </div>
-          </div>
+          </form>
+          <div class="login-bottom">Forgot Password | Enroll</div>
+          <div id="error-message" class="error-message">ERROR 505</div>
         </div>
       </div>
     </div>
-  </header>
+  </div>
 
   <!-- Блок LiveEasily + MillFamily -->
   <div class="images-container">

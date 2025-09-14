@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      min-height: 100vh;
+      height: 100vh;
       background-color: #f0f0f0;
     }
 
@@ -145,10 +145,9 @@
       height: 454px;
       background-color: white;
       left: 188px;
-      top: 349px;
+      top: 0px;
       border-radius: 8px;
-      overflow: hidden;
-      z-index: 5;
+      position: relative;
     }
 
     .new-block {
@@ -205,7 +204,7 @@
       height: 151px;
       background-color: white;
       left: 188px;
-      top: 820px;
+      top: 818.22px;
       border-radius: 8px;
       display: flex;
       flex-direction: column;
@@ -799,269 +798,11 @@
       margin-right: 24px;
     }
 
+    /* Додано стилі для підкреслення транзакцій при наведенні */
     .white-block .transaction-item:hover::before,
     .white-block .transaction-item:hover::after {
       text-decoration: underline;
       cursor: pointer;
-    }
-
-    /* Media Queries для адаптивності (тільки для менших екранів) */
-    @media (max-width: 1200px) {
-      .greeting {
-        position: relative;
-        top: auto;
-        left: auto;
-        text-align: center;
-        font-size: 24px;
-        margin: 5px 0;
-      }
-
-      .profile-image {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 5px auto;
-        width: 35px;
-        height: 35px;
-      }
-
-      .credit-button, .used-button, .available-button {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 100%;
-        margin: 5px 0;
-        height: 60px;
-        font-size: 18px;
-      }
-
-      .buttons-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 10px;
-        margin: 10px 0;
-      }
-
-      .new-button, .deposit-image-button, .millpay-button, .message-button {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 70px;
-        height: 70px;
-        margin: 0;
-      }
-
-      .new-button img, .deposit-image-button img, .millpay-button img, .message-button img {
-        width: 25px;
-        height: 25px;
-      }
-
-      .white-block, .new-block, .new-block-empty, .new-block-lower, .new-empty-block {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 100%;
-        height: auto;
-        margin: 10px 0;
-        min-height: 150px;
-      }
-
-      .white-block {
-        min-height: 400px;
-      }
-
-      .white-block .transaction {
-        position: relative;
-        margin: 10px;
-      }
-
-      .white-block .details, .white-block .details-second, .white-block .details-third,
-      .white-block .details-fourth, .white-block .details-fifth, .white-block .details-sixth {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 10px 0;
-      }
-
-      .white-block .date, .white-block .date-second, .white-block .date-third,
-      .white-block .date-fourth, .white-block .date-fifth, .white-block .date-sixth {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 5px 0;
-      }
-
-      .new-block .mlog-image {
-        width: 40%;
-        margin-top: 0;
-      }
-
-      .new-block .miloc-image, .new-block .milph-image, .new-block .milmas-image, .new-block .mili-image {
-        position: relative;
-        margin: 5px auto;
-      }
-
-      .new-block .locations-text, .new-block .call-text, .new-block .message-text, .new-block .info-text {
-        position: relative;
-        margin: 5px auto;
-        text-align: center;
-      }
-
-      .new-block-empty .credit-checks {
-        position: relative;
-        margin: 10px;
-      }
-
-      .credit-buttons-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 10px;
-        margin: 0 10px;
-      }
-
-      .new-block-empty .processing-button, .new-block-empty .accepted-button {
-        position: relative;
-        top: auto;
-        left: auto;
-        flex: 1;
-        height: 40px;
-        margin: 0;
-      }
-
-      .new-block-empty .pay-installment, .new-block-empty .milc-image {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 5px auto;
-      }
-
-      .new-block-lower .millist-image, .new-block-lower .milat-image, .new-block-lower .miljef-image, .new-block-lower .millis-image {
-        position: relative;
-        left: auto;
-        margin: 5px auto;
-      }
-
-      .new-block-lower .holiday-hours, .new-block-lower .low-funds, .new-block-lower .jennifer-text, .new-block-lower .home-improvement-text {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 5px 0;
-      }
-
-      .new-block-lower .holiday-date, .new-block-lower .low-funds-date, .new-block-lower .jennifer-date, .new-block-lower .home-improvement-date {
-        position: relative;
-        top: auto;
-        left: auto;
-        text-align: right;
-        margin: 5px 0;
-      }
-
-      .new-block-lower .brunch-text, .new-block-lower .savings-status, .new-block-lower .contract-text, .new-block-lower .get-started-text {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 100%;
-        padding-left: 0;
-        margin: 5px 0;
-      }
-
-      .new-empty-block .milp-image, .new-empty-block .miltime-image {
-        position: relative;
-        left: auto;
-        margin: 5px auto;
-      }
-
-      .new-empty-block .make-payment, .new-empty-block .your-town-utilities, .new-empty-block .amount-due {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 5px 0;
-      }
-
-      .white-block .see-more, .new-block-lower .see-more {
-        position: relative;
-        bottom: auto;
-        right: auto;
-        text-align: right;
-        margin: 10px 0 0 0;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .greeting {
-        font-size: 22px;
-        margin: 5px 0;
-      }
-
-      .profile-image {
-        width: 30px;
-        height: 30px;
-        margin: 5px auto;
-      }
-
-      .credit-button, .used-button, .available-button {
-        font-size: 16px;
-        height: 50px;
-      }
-
-      .new-button, .deposit-image-button, .millpay-button, .message-button {
-        width: 60px;
-        height: 60px;
-      }
-
-      .new-button img, .deposit-image-button img, .millpay-button img, .message-button img {
-        width: 20px;
-        height: 20px;
-      }
-
-      .new-block-empty .processing-button, .new-block-empty .accepted-button {
-        font-size: 14px;
-      }
-
-      .white-block, .new-block, .new-block-empty, .new-block-lower, .new-empty-block {
-        margin: 5px 0;
-        min-height: 120px;
-      }
-
-      .white-block {
-        min-height: 350px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .greeting {
-        font-size: 18px;
-        margin: 5px 0;
-      }
-
-      .credit-button, .used-button, .available-button {
-        font-size: 14px;
-        height: 45px;
-      }
-
-      .new-button, .deposit-image-button, .millpay-button, .message-button {
-        width: 50px;
-        height: 50px;
-      }
-
-      .new-button img, .deposit-image-button img, .millpay-button img, .message-button img {
-        width: 18px;
-        height: 18px;
-      }
-
-      .new-block-empty .processing-button, .new-block-empty .accepted-button {
-        font-size: 12px;
-      }
-
-      .white-block span, .new-block-empty span, .new-block-lower span, .new-empty-block span {
-        font-size: 16px;
-      }
-
-      .white-block {
-        min-height: 300px;
-      }
     }
   </style>
 </head>
@@ -1087,23 +828,21 @@
       <span class="available-amount">$5,986.21</span>
     </div>
   </div>
-  <div class="buttons-container">
-    <div class="new-button">
-      <img src="images/milltrf.jpg" alt="Milltrf image">
-      <span>Transfer</span>
-    </div>
-    <div class="deposit-image-button">
-      <img src="images/milldep.jpg" alt="Milldep image">
-      <span>Deposit</span>
-    </div>
-    <div class="millpay-button">
-      <img src="images/milp2.jpg" alt="Milp2 image">
-      <span>Pay</span>
-    </div>
-    <div class="message-button">
-      <img src="images/milmas2.jpg" alt="Milmas2 image">
-      <span>Message</span>
-    </div>
+  <div class="new-button">
+    <img src="images/milltrf.jpg" alt="Milltrf image">
+    <span>Transfer</span>
+  </div>
+  <div class="deposit-image-button">
+    <img src="images/milldep.jpg" alt="Milldep image">
+    <span>Deposit</span>
+  </div>
+  <div class="millpay-button">
+    <img src="images/milp2.jpg" alt="Milp2 image">
+    <span>Pay</span>
+  </div>
+  <div class="message-button">
+    <img src="images/milmas2.jpg" alt="Milmas2 image">
+    <span>Message</span>
   </div>
   <div class="white-block">
     <span class="transaction">Transactions</span>
@@ -1134,10 +873,8 @@
   </div>
   <div class="new-block-empty">
     <span class="credit-checks">Credit checks</span>
-    <div class="credit-buttons-container">
-      <div class="processing-button">0 Processing</div>
-      <div class="accepted-button">4 Accepted</div>
-    </div>
+    <div class="processing-button">0 Processing</div>
+    <div class="accepted-button">4 Accepted</div>
     <img src="images/milc.jpg" alt="Milc Image" class="milc-image">
     <span class="pay-installment">Pay installment</span>
   </div>

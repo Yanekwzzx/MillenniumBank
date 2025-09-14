@@ -205,7 +205,7 @@
       height: 151px;
       background-color: white;
       left: 188px;
-      top: 820px; /* Змінено з 850px на 820px, щоб підняти вище */
+      top: 820px;
       border-radius: 8px;
       display: flex;
       flex-direction: column;
@@ -813,14 +813,14 @@
         left: auto;
         text-align: center;
         font-size: 24px;
-        margin: 10px 0;
+        margin: 5px 0; /* Змінено з margin: 10px 0 */
       }
 
       .profile-image {
         position: relative;
         top: auto;
         left: auto;
-        margin: 10px auto;
+        margin: 5px auto; /* Змінено з margin: 10px auto */
         width: 35px;
         height: 35px;
       }
@@ -861,6 +861,27 @@
 
       .white-block {
         min-height: 400px;
+      }
+
+      .white-block .transaction {
+        position: relative; /* Змінено з absolute */
+        margin: 10px; /* Додано для відступу */
+      }
+
+      .white-block .details, .white-block .details-second, .white-block .details-third,
+      .white-block .details-fourth, .white-block .details-fifth, .white-block .details-sixth {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 10px 0; /* Змінено з margin: 5px 0 */
+      }
+
+      .white-block .date, .white-block .date-second, .white-block .date-third,
+      .white-block .date-fourth, .white-block .date-fifth, .white-block .date-sixth {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 5px 0; /* Змінено з margin: 5px 0, але уточнено для ясності */
       }
 
       .new-block .mlog-image {
@@ -945,30 +966,18 @@
         text-align: right;
         margin: 10px 0 0 0;
       }
-
-      .white-block .details, .white-block .details-second, .white-block .details-third, .white-block .details-fourth, .white-block .details-fifth, .white-block .details-sixth {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 5px 0;
-      }
-
-      .white-block .date, .white-block .date-second, .white-block .date-third, .white-block .date-fourth, .white-block .date-fifth, .white-block .date-sixth {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 5px 0;
-      }
     }
 
     @media (max-width: 768px) {
       .greeting {
         font-size: 22px;
+        margin: 5px 0; /* Збережено для консистентності */
       }
 
       .profile-image {
         width: 30px;
         height: 30px;
+        margin: 5px auto; /* Збережено для консистентності */
       }
 
       .credit-button, .used-button, .available-button {
@@ -999,6 +1008,7 @@
     @media (max-width: 480px) {
       .greeting {
         font-size: 18px;
+        margin: 5px 0; /* Збережено для консистентності */
       }
 
       .credit-button, .used-button, .available-button {
